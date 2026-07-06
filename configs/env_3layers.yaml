@@ -37,9 +37,9 @@ alpha: 0.3
 reward_scale: 0.002
 
 # Reward shaping: very aggressive stockout avoidance
-stockout_penalty: 30.0
-fill_rate_bonus: 10.0
-order_penalty: 0.02
+stockout_penalty: 0.0
+fill_rate_bonus: 0.0
+order_penalty: 0.0
 # Increase initial inventory for better warm-up
 init_inventory: 40.0
 init_pipeline: 16.0
