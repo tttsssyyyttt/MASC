@@ -279,6 +279,8 @@ class MEIRPEnv(gym.Env):
             stockout_penalty=cfg.stockout_penalty,
             fill_rate_bonus=cfg.fill_rate_bonus,
             order_penalty=cfg.order_penalty,
+            service_level_target=cfg.service_level_target,
+            service_level_penalty=cfg.service_level_penalty,
             order_qty=order_qty,
             fulfilled_demand=self.fulfilled_demand,
         )
