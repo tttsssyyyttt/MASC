@@ -19,9 +19,9 @@ import torch.optim as optim
 
 from ..base import MADRLAgent
 from .buffer import RolloutBuffer
-from ...core.config import EnvConfig
-from ...core.network import build_network
-from ...models.encoders import make_encoder
+from core.config import EnvConfig
+from core.network import build_network
+from models.encoders import make_encoder
 
 
 class BranchingActor(nn.Module):
@@ -107,7 +107,8 @@ class MAPPOAgent(MADRLAgent):
 
         self.upstream, self.downstream, self.topo_order, self.terminals = build_network(cfg)
         self.n_upstream = [len(self.upstream[i]) for i in range(self.n)]
-        self.n_action_branches = [1 if k == 0 else k + 1 for k in self.n_upstream]
+        # self.n_action_branches = [1 if k == 0 else k + 1 for k in self.n_upstream]
+        self.n_action_branches = [1 if k <= 1 else k + 1 for k in self.n_upstream]
 
         # Encoder: always use GRU→MLP (same as IQL)
         self.encoder = make_encoder(
@@ -189,8 +190,14 @@ class MAPPOAgent(MADRLAgent):
                 action_vals.append(q)
                 node_log_prob += lp
 
+            # if k == 0:
+            #     action_i = action_vals[0]  # single int for root nodes
+            # else:
+            #     action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
             if k == 0:
-                action_i = action_vals[0]  # single int for root nodes
+                action_i = action_vals[0]
+            elif k == 1:
+                action_i = [action_vals[0]]
             else:
                 action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
 

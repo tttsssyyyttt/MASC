@@ -11,34 +11,33 @@ Usage (parallel per topology):
 import sys, os, time, json, argparse, warnings, csv, random
 
 warnings.filterwarnings("ignore")
-if sys.platform == 'win32':
-    try:
-        sys.stdout.reconfigure(encoding='utf-8')
-    except:
-        pass
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+import sys
+from pathlib import Path
+# 将项目根目录加入 sys.path（假设 full_compare.py 在 meirp_project/scripts/ 下）
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import numpy as np
 import torch
 import yaml
 from tqdm import tqdm
+
 torch.backends.cudnn.benchmark = False
 torch.backends.cudnn.deterministic = True
 
-from meirp_project.core.config import from_yaml
-from meirp_project.core.env import MEIRPEnv
-from meirp_project.core.demand import DemandGenerator
-from meirp_project.algorithms.registry import make_agent
-from meirp_project.baselines.base_stock import BaseStockPolicy
-from meirp_project.baselines.routed import RoutedBaseStockPolicy, RoutedSSPolicy, with_routing
-from meirp_project.baselines.ss_policy import SSPolicy
-from meirp_project.evaluation.metrics import compute_metrics
-from meirp_project.collaboration.milp_advisor import MILPAdvisor
-from meirp_project.collaboration.escalation import ThreeLevelEscalation
-from meirp_project.solvers.ga_inventory_solver import GAInventorySolver
-from meirp_project.solvers.alns_inventory_solver import ALNSInventorySolver
-from meirp_project.solvers.alns_irp_solver import ALNSIRPSolver
-from meirp_project.solvers.ortools_irp_solver import ORToolsIRPSolver
+from core.config import from_yaml
+from core.env import MEIRPEnv
+from core.demand import DemandGenerator
+from algorithms.registry import make_agent
+from baselines.base_stock import BaseStockPolicy
+from baselines.routed import RoutedBaseStockPolicy, RoutedSSPolicy, with_routing
+from baselines.ss_policy import SSPolicy
+from evaluation.metrics import compute_metrics
+from collaboration.milp_advisor import MILPAdvisor
+from collaboration.escalation import ThreeLevelEscalation
+from solvers.ga_inventory_solver import GAInventorySolver
+from solvers.alns_inventory_solver import ALNSInventorySolver
+from solvers.alns_irp_solver import ALNSIRPSolver
+from solvers.ortools_irp_solver import ORToolsIRPSolver
 
 
 def set_global_seed(seed):
@@ -49,6 +48,7 @@ def set_global_seed(seed):
     torch.manual_seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
+
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 CFG_DIR = os.path.join(os.path.dirname(SCRIPT_DIR), "configs")
@@ -119,16 +119,16 @@ def to_jsonable(obj):
 
 
 def eval_policy(
-    agent,
-    cfg,
-    n_seeds=5,
-    is_base=False,
-    escalation=None,
-    oracle_demand=False,
-    return_raw=False,
-    return_action_log=False,
-    action_label=None,
-    train_episode=None,
+        agent,
+        cfg,
+        n_seeds=5,
+        is_base=False,
+        escalation=None,
+        oracle_demand=False,
+        return_raw=False,
+        return_action_log=False,
+        action_label=None,
+        train_episode=None,
 ):
     ms = []
     action_rows = []
@@ -364,15 +364,15 @@ def _annotate_cost_metrics(metrics, cfg, name):
 
 
 def train_rl(
-    agent,
-    cfg,
-    escalation,
-    n_ep,
-    warmup,
-    label,
-    eval_interval=0,
-    eval_seeds=1,
-    eval_mode="pure",
+        agent,
+        cfg,
+        escalation,
+        n_ep,
+        warmup,
+        label,
+        eval_interval=0,
+        eval_seeds=1,
+        eval_mode="pure",
 ):
     env = MEIRPEnv(cfg)
     R = []
@@ -434,23 +434,23 @@ def train_rl(
         for key in ("loss", "policy_loss", "value_loss", "entropy"):
             train_row[key] = _safe_float(mean_updates.get(key, ""))
         for key in (
-            "avg_cost_per_step",
-            "weighted_total_cost",
-            "avg_weighted_total_cost_per_step",
-            "total_inventory_cost",
-            "avg_inventory_cost_per_step",
-            "total_transport",
-            "routing_cost",
-            "avg_routing_cost_per_step",
-            "transport_weight",
-            "avg_transport_per_step",
-            "avg_route_distance_per_step",
-            "routing_feasible_rate",
-            "avg_fill_rate",
-            "avg_stockout_rate",
-            "avg_bullwhip_cv",
-            "total_holding",
-            "total_backlog",
+                "avg_cost_per_step",
+                "weighted_total_cost",
+                "avg_weighted_total_cost_per_step",
+                "total_inventory_cost",
+                "avg_inventory_cost_per_step",
+                "total_transport",
+                "routing_cost",
+                "avg_routing_cost_per_step",
+                "transport_weight",
+                "avg_transport_per_step",
+                "avg_route_distance_per_step",
+                "routing_feasible_rate",
+                "avg_fill_rate",
+                "avg_stockout_rate",
+                "avg_bullwhip_cv",
+                "total_holding",
+                "total_backlog",
         ):
             train_row[key] = _safe_float(ep_metrics.get(key, ""))
         train_rows.append(train_row)
@@ -791,12 +791,15 @@ def run_compare(args):
         set_global_seed(cfg.seed)
         agent = make_agent(algo, cfg, obs_dim=obs_dim, device=args.device, use_gnn=use_gnn, **kw)
         t0 = time.time()
+
+        warmup_steps = 0 if algo == "mappo" else 500
+
         rewards, train_log, eval_log, action_log, eval_action_log, attention_log = train_rl(
             agent,
             cfg,
             None,
             args.ep,
-            500,
+            warmup_steps,
             name,
             eval_interval=args.rl_eval_interval,
             eval_seeds=args.rl_eval_seeds,
@@ -836,12 +839,15 @@ def run_compare(args):
         sea_agent = make_agent(algo, cfg, obs_dim=obs_dim, device=args.device, use_gnn=use_gnn, **kw)
         esc_train = ThreeLevelEscalation(cfg, k_spc=3.0)
         t0 = time.time()
+
+        warmup_steps = 0 if algo == "mappo" else 500
+
         sea_rewards, train_log, eval_log, action_log, eval_action_log, attention_log = train_rl(
             sea_agent,
             cfg,
             esc_train,
             args.ep,
-            500,
+            warmup_steps,
             f"SEA-{name}",
             eval_interval=args.rl_eval_interval,
             eval_seeds=args.rl_eval_seeds,
@@ -928,100 +934,100 @@ def run_compare(args):
         }), f, indent=2)
     write_summary_csv(csv_out, order, results, runtimes)
     if write_rows_csv(
-        rl_train_out,
-        rl_train_logs,
-        preferred_fields=[
-            "algorithm", "episode", "global_step", "episode_reward_sum",
-            "episode_reward_mean_per_step", "episode_length", "update_count",
-            "epsilon", "buffer_size", "loss", "policy_loss", "value_loss",
-            "entropy", "avg_cost_per_step", "avg_weighted_total_cost_per_step",
-            "avg_inventory_cost_per_step", "avg_routing_cost_per_step",
-            "transport_weight", "total_inventory_cost",
-            "total_transport", "routing_cost", "avg_transport_per_step",
-            "avg_route_distance_per_step", "routing_feasible_rate",
-            "avg_fill_rate", "avg_stockout_rate", "avg_bullwhip_cv",
-            "avg_requested_bullwhip_cv", "avg_shipped_bullwhip_cv",
-            "max_bullwhip_cv", "avg_order_mean", "avg_order_std",
-            "avg_order_var", "avg_demand_mean", "avg_demand_std",
-            "avg_demand_var", "avg_requested_demand_mean",
-            "avg_requested_demand_std", "avg_requested_demand_var",
-            "avg_shipped_demand_mean", "avg_shipped_demand_std",
-            "avg_shipped_demand_var", "avg_fulfilled_demand_mean",
-            "avg_fulfilled_demand_std", "avg_fulfilled_demand_var",
-            "min_demand_var",
-            "min_requested_demand_var", "max_order_var",
-            "total_holding", "total_backlog", "avg_pipeline",
-        ],
+            rl_train_out,
+            rl_train_logs,
+            preferred_fields=[
+                "algorithm", "episode", "global_step", "episode_reward_sum",
+                "episode_reward_mean_per_step", "episode_length", "update_count",
+                "epsilon", "buffer_size", "loss", "policy_loss", "value_loss",
+                "entropy", "avg_cost_per_step", "avg_weighted_total_cost_per_step",
+                "avg_inventory_cost_per_step", "avg_routing_cost_per_step",
+                "transport_weight", "total_inventory_cost",
+                "total_transport", "routing_cost", "avg_transport_per_step",
+                "avg_route_distance_per_step", "routing_feasible_rate",
+                "avg_fill_rate", "avg_stockout_rate", "avg_bullwhip_cv",
+                "avg_requested_bullwhip_cv", "avg_shipped_bullwhip_cv",
+                "max_bullwhip_cv", "avg_order_mean", "avg_order_std",
+                "avg_order_var", "avg_demand_mean", "avg_demand_std",
+                "avg_demand_var", "avg_requested_demand_mean",
+                "avg_requested_demand_std", "avg_requested_demand_var",
+                "avg_shipped_demand_mean", "avg_shipped_demand_std",
+                "avg_shipped_demand_var", "avg_fulfilled_demand_mean",
+                "avg_fulfilled_demand_std", "avg_fulfilled_demand_var",
+                "min_demand_var",
+                "min_requested_demand_var", "max_order_var",
+                "total_holding", "total_backlog", "avg_pipeline",
+            ],
     ):
         print(f"  Saved: {rl_train_out}")
     if write_rows_csv(
-        rl_eval_out,
-        rl_eval_logs,
-        preferred_fields=[
-            "algorithm", "train_episode", "eval_seeds", "avg_cost_per_step",
-            "avg_weighted_total_cost_per_step", "avg_inventory_cost_per_step",
-            "avg_routing_cost_per_step", "transport_weight",
-            "total_inventory_cost", "total_transport", "routing_cost",
-            "avg_transport_per_step",
-            "avg_route_distance_per_step", "routing_feasible_rate",
-            "avg_fill_rate", "avg_stockout_rate", "avg_bullwhip_cv",
-            "avg_requested_bullwhip_cv", "avg_shipped_bullwhip_cv",
-            "max_bullwhip_cv", "avg_order_mean", "avg_order_std",
-            "avg_order_var", "avg_demand_mean", "avg_demand_std",
-            "avg_demand_var", "avg_requested_demand_mean",
-            "avg_requested_demand_std", "avg_requested_demand_var",
-            "avg_shipped_demand_mean", "avg_shipped_demand_std",
-            "avg_shipped_demand_var", "avg_fulfilled_demand_mean",
-            "avg_fulfilled_demand_std", "avg_fulfilled_demand_var",
-            "min_demand_var",
-            "min_requested_demand_var", "max_order_var",
-            "total_holding", "total_backlog",
-        ],
+            rl_eval_out,
+            rl_eval_logs,
+            preferred_fields=[
+                "algorithm", "train_episode", "eval_seeds", "avg_cost_per_step",
+                "avg_weighted_total_cost_per_step", "avg_inventory_cost_per_step",
+                "avg_routing_cost_per_step", "transport_weight",
+                "total_inventory_cost", "total_transport", "routing_cost",
+                "avg_transport_per_step",
+                "avg_route_distance_per_step", "routing_feasible_rate",
+                "avg_fill_rate", "avg_stockout_rate", "avg_bullwhip_cv",
+                "avg_requested_bullwhip_cv", "avg_shipped_bullwhip_cv",
+                "max_bullwhip_cv", "avg_order_mean", "avg_order_std",
+                "avg_order_var", "avg_demand_mean", "avg_demand_std",
+                "avg_demand_var", "avg_requested_demand_mean",
+                "avg_requested_demand_std", "avg_requested_demand_var",
+                "avg_shipped_demand_mean", "avg_shipped_demand_std",
+                "avg_shipped_demand_var", "avg_fulfilled_demand_mean",
+                "avg_fulfilled_demand_std", "avg_fulfilled_demand_var",
+                "min_demand_var",
+                "min_requested_demand_var", "max_order_var",
+                "total_holding", "total_backlog",
+            ],
     ):
         print(f"  Saved: {rl_eval_out}")
     if write_rows_csv(
-        rl_action_out,
-        rl_action_logs,
-        preferred_fields=[
-            "algorithm", "episode", "rl_mean_action", "rl_std_action",
-            "rl_zero_action_rate", "rl_max_action_rate",
-            "rl_invalid_action_count", "exec_mean_action", "exec_std_action",
-            "exec_zero_action_rate", "exec_max_action_rate",
-            "exec_invalid_action_count", "env_mean_order_qty",
-            "env_std_order_qty", "env_zero_order_rate", "env_max_order_rate",
-            "rl_per_node_mean_action",
-            "rl_per_node_std_action", "rl_per_layer_mean_action",
-            "exec_per_node_mean_action", "exec_per_node_std_action",
-            "exec_per_layer_mean_action", "env_per_node_mean_order_qty",
-            "env_per_node_std_order_qty", "env_per_layer_mean_order_qty",
-        ],
+            rl_action_out,
+            rl_action_logs,
+            preferred_fields=[
+                "algorithm", "episode", "rl_mean_action", "rl_std_action",
+                "rl_zero_action_rate", "rl_max_action_rate",
+                "rl_invalid_action_count", "exec_mean_action", "exec_std_action",
+                "exec_zero_action_rate", "exec_max_action_rate",
+                "exec_invalid_action_count", "env_mean_order_qty",
+                "env_std_order_qty", "env_zero_order_rate", "env_max_order_rate",
+                "rl_per_node_mean_action",
+                "rl_per_node_std_action", "rl_per_layer_mean_action",
+                "exec_per_node_mean_action", "exec_per_node_std_action",
+                "exec_per_layer_mean_action", "env_per_node_mean_order_qty",
+                "env_per_node_std_order_qty", "env_per_layer_mean_order_qty",
+            ],
     ):
         print(f"  Saved: {rl_action_out}")
     if write_rows_csv(
-        rl_eval_action_out,
-        rl_eval_action_logs,
-        preferred_fields=[
-            "algorithm", "train_episode", "eval_seed",
-            "eval_raw_mean_action", "eval_raw_std_action",
-            "eval_raw_zero_action_rate", "eval_raw_max_action_rate",
-            "eval_env_mean_order_qty", "eval_env_std_order_qty",
-            "eval_env_zero_order_rate", "eval_env_max_order_rate",
-            "eval_raw_per_node_mean_action", "eval_raw_per_node_std_action",
-            "eval_raw_per_layer_mean_action",
-            "eval_env_per_node_mean_order_qty",
-            "eval_env_per_node_std_order_qty",
-            "eval_env_per_layer_mean_order_qty",
-        ],
+            rl_eval_action_out,
+            rl_eval_action_logs,
+            preferred_fields=[
+                "algorithm", "train_episode", "eval_seed",
+                "eval_raw_mean_action", "eval_raw_std_action",
+                "eval_raw_zero_action_rate", "eval_raw_max_action_rate",
+                "eval_env_mean_order_qty", "eval_env_std_order_qty",
+                "eval_env_zero_order_rate", "eval_env_max_order_rate",
+                "eval_raw_per_node_mean_action", "eval_raw_per_node_std_action",
+                "eval_raw_per_layer_mean_action",
+                "eval_env_per_node_mean_order_qty",
+                "eval_env_per_node_std_order_qty",
+                "eval_env_per_layer_mean_order_qty",
+            ],
     ):
         print(f"  Saved: {rl_eval_action_out}")
     if write_rows_csv(
-        rl_attention_out,
-        rl_attention_logs,
-        preferred_fields=[
-            "algorithm", "episode", "attention_mean", "attention_std",
-            "attention_min", "attention_max", "attention_entropy",
-            "attention_edges",
-        ],
+            rl_attention_out,
+            rl_attention_logs,
+            preferred_fields=[
+                "algorithm", "episode", "attention_mean", "attention_std",
+                "attention_min", "attention_max", "attention_entropy",
+                "attention_edges",
+            ],
     ):
         print(f"  Saved: {rl_attention_out}")
     if training_curves:

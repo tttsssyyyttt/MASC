@@ -18,9 +18,9 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 from ..base import MADRLAgent
-from ...core.config import EnvConfig
-from ...core.network import build_network
-from ...models.encoders import make_encoder
+from core.config import EnvConfig
+from core.network import build_network
+from models.encoders import make_encoder
 from .buffer import ReplayBuffer
 
 
@@ -30,7 +30,7 @@ class BranchingQNetwork(nn.Module):
     Dropout is kept active during inference for MC Dropout uncertainty estimation.
     """
 
-    def __init__(self, input_dim: int, n_branches: int, max_order: int, hidden_dim: int = 128, dropout: float = 0.1):
+    def __init__(self, input_dim: int, n_branches: int, max_order: int, hidden_dim: int = 128, dropout: float = 0.0):
         super().__init__()
         self.n_branches = max(n_branches, 1)
         self.dropout_rate = dropout
@@ -92,7 +92,8 @@ class IQLAgent(MADRLAgent):
 
         self.upstream, self.downstream, self.topo_order, self.terminals = build_network(cfg)
         self.n_upstream = [len(self.upstream[i]) for i in range(self.n)]
-        self.n_action_branches = [1 if k == 0 else k + 1 for k in self.n_upstream]
+        # self.n_action_branches = [1 if k == 0 else k + 1 for k in self.n_upstream]
+        self.n_action_branches = [1 if k <= 1 else k + 1 for k in self.n_upstream]
 
         # Encoder: always use GRU→MLP (or GRU→GAT if use_gnn=True)
         self.encoder = make_encoder(
@@ -173,8 +174,17 @@ class IQLAgent(MADRLAgent):
                 k = self.n_upstream[i]
                 if np.random.random() < epsilon:
                     # Random exploration
+                    # if k == 0:
+                    #     action_i = np.random.randint(0, self.max_order + 1)
+                    # else:
+                    #     action_i = {
+                    #         "q": int(np.random.randint(0, self.max_order + 1)),
+                    #         "alpha": [int(np.random.randint(0, self.max_order + 1)) for _ in range(k)],
+                    #     }
                     if k == 0:
                         action_i = np.random.randint(0, self.max_order + 1)
+                    elif k == 1:
+                        action_i = [int(np.random.randint(0, self.max_order + 1))]
                     else:
                         action_i = {
                             "q": int(np.random.randint(0, self.max_order + 1)),
@@ -185,8 +195,14 @@ class IQLAgent(MADRLAgent):
                         q_branches = self.q_nets[i](encoded[i].unsqueeze(0))
                     # argmax per branch
                     action_vals = [int(q_b.argmax(dim=1).item()) for q_b in q_branches]
+                    # if k == 0:
+                    #     action_i = action_vals[0]  # single int for root nodes
+                    # else:
+                    #     action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
                     if k == 0:
-                        action_i = action_vals[0]  # single int for root nodes
+                        action_i = action_vals[0]
+                    elif k == 1:
+                        action_i = [action_vals[0]]
                     else:
                         action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
 

@@ -17,20 +17,20 @@ class RolloutBuffer:
 
     def __init__(self):
         self.obs = []
-        self.actions = []          # raw action list per step
+        self.actions = []  # raw action list per step
         self.rewards = []
         self.values = []
         self.log_probs = []
         self.dones = []
 
     def push(
-        self,
-        obs: np.ndarray,
-        actions: list,
-        rewards: np.ndarray,
-        values: np.ndarray,
-        log_probs: np.ndarray,
-        dones: np.ndarray,
+            self,
+            obs: np.ndarray,
+            actions: list,
+            rewards: np.ndarray,
+            values: np.ndarray,
+            log_probs: np.ndarray,
+            dones: np.ndarray,
     ):
         self.obs.append(obs.copy())
         self.actions.append(actions)
@@ -99,11 +99,11 @@ class RolloutBuffer:
 
         for t in reversed(range(T)):
             if t == T - 1:
-                next_value = 0.0
-                next_non_terminal = 0.0
+                next_value = np.zeros(N)
             else:
                 next_value = self.values[t + 1]
-                next_non_terminal = 1.0 - self.dones[t + 1]
+
+            next_non_terminal = 1.0 - self.dones[t]
 
             delta = self.rewards[t] + gamma * next_value * next_non_terminal - self.values[t]
             last_gae = delta + gamma * lam * next_non_terminal * last_gae

@@ -6,8 +6,8 @@ from typing import List
 
 import numpy as np
 
-from ..core.config import EnvConfig
-from ..core.env import MEIRPEnv
+from core.config import EnvConfig
+from core.env import MEIRPEnv
 from .ga_inventory_solver import GAInventorySolver
 
 

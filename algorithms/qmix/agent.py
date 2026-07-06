@@ -16,9 +16,9 @@ import torch.optim as optim
 from ..base import MADRLAgent
 from ..iql.agent import BranchingQNetwork
 from ..iql.buffer import ReplayBuffer
-from ...core.config import EnvConfig
-from ...core.network import build_network
-from ...models.encoders import make_encoder
+from core.config import EnvConfig
+from core.network import build_network
+from models.encoders import make_encoder
 from .mixer import QMixer
 
 
@@ -58,7 +58,7 @@ class QMIXAgent(MADRLAgent):
 
         self.upstream, self.downstream, self.topo_order, self.terminals = build_network(cfg)
         self.n_upstream = [len(self.upstream[i]) for i in range(self.n)]
-        self.n_action_branches = [1 if k == 0 else k + 1 for k in self.n_upstream]
+        self.n_action_branches = [1 if k <= 1 else k + 1 for k in self.n_upstream]
 
         # Encoder: always use GRU→MLP (same as IQL)
         self.encoder = make_encoder(
@@ -131,8 +131,17 @@ class QMIXAgent(MADRLAgent):
         for i in range(self.n):
             k = self.n_upstream[i]
             if np.random.random() < epsilon:
+                # if k == 0:
+                #     action_i = np.random.randint(0, self.max_order + 1)
+                # else:
+                #     action_i = {
+                #         "q": int(np.random.randint(0, self.max_order + 1)),
+                #         "alpha": [int(np.random.randint(0, self.max_order + 1)) for _ in range(k)],
+                #     }
                 if k == 0:
                     action_i = np.random.randint(0, self.max_order + 1)
+                elif k == 1:
+                    action_i = [int(np.random.randint(0, self.max_order + 1))]
                 else:
                     action_i = {
                         "q": int(np.random.randint(0, self.max_order + 1)),
@@ -142,8 +151,14 @@ class QMIXAgent(MADRLAgent):
                 with torch.no_grad():
                     q_branches = self.q_nets[i](encoded[i].unsqueeze(0))
                 action_vals = [int(q_b.argmax(dim=1).item()) for q_b in q_branches]
+                # if k == 0:
+                #     action_i = action_vals[0]
+                # else:
+                #     action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
                 if k == 0:
                     action_i = action_vals[0]
+                elif k == 1:
+                    action_i = [action_vals[0]]
                 else:
                     action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
 

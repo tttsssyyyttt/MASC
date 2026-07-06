@@ -14,8 +14,8 @@ from typing import List, Optional
 
 import numpy as np
 
-from ..core.config import EnvConfig
-from ..core.env import MEIRPEnv
+from core.config import EnvConfig
+from core.env import MEIRPEnv
 from .base import InventoryPolicy
 
 

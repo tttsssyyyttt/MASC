@@ -11,6 +11,7 @@ Tests cover:
 
 import sys
 import os
+
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 
 import numpy as np
@@ -278,8 +279,8 @@ class TestIQLBDQ:
         """IQL+GNN should work with BDQ."""
         cfg = make_3layer_config()
         obs_dim = 6 + 3 * cfg.lead_time
-        edge_index = torch.tensor([[0,1,1,0,1,2,2,3,3,4,4],[2,2,3,3,4,5,6,6,7,7,8]], dtype=torch.long)
-        layer_ids = torch.tensor([0,0,1,1,1,2,2,2,2], dtype=torch.long)
+        edge_index = torch.tensor([[0, 1, 1, 0, 1, 2, 2, 3, 3, 4, 4], [2, 2, 3, 3, 4, 5, 6, 6, 7, 7, 8]], dtype=torch.long)
+        layer_ids = torch.tensor([0, 0, 1, 1, 1, 2, 2, 2, 2], dtype=torch.long)
 
         agent = IQLAgent(cfg, obs_dim=obs_dim, use_gnn=True,
                          edge_index=edge_index, layer_ids=layer_ids, device='cpu')

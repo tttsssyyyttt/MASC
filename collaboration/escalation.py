@@ -15,9 +15,9 @@ from __future__ import annotations
 
 import numpy as np
 
-from ..core.config import EnvConfig
-from ..core.health_monitor import HealthMonitor
-from ..baselines.base_stock import BaseStockPolicy
+from core.config import EnvConfig
+from core.health_monitor import HealthMonitor
+from baselines.base_stock import BaseStockPolicy
 
 
 class ThreeLevelEscalation:

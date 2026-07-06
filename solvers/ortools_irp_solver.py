@@ -6,10 +6,10 @@ from typing import List, Optional
 
 import numpy as np
 
-from ..core.config import EnvConfig
-from ..core.env import MEIRPEnv
-from ..core.network import build_network
-from ..routing.distance import default_coords, euclidean
+from core.config import EnvConfig
+from core.env import MEIRPEnv
+from core.network import build_network
+from routing.distance import default_coords, euclidean
 
 SCALE = 100
 

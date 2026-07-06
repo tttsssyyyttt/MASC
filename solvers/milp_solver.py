@@ -21,8 +21,8 @@ from typing import List
 
 import numpy as np
 
-from ..core.config import EnvConfig
-from ..core.network import build_network
+from core.config import EnvConfig
+from core.network import build_network
 
 
 class MILPSolver:

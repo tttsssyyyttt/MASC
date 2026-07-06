@@ -6,9 +6,9 @@ from typing import Dict
 
 import numpy as np
 
-from ..core.config import EnvConfig
-from ..routing.distance import default_coords
-from ..routing.policy import RoutingPolicy
+from core.config import EnvConfig
+from routing.distance import default_coords
+from routing.policy import RoutingPolicy
 from .alns_inventory_solver import ALNSInventorySolver
 
 

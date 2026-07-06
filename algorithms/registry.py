@@ -11,8 +11,8 @@ from .base import MADRLAgent
 from .iql.agent import IQLAgent
 from .qmix.agent import QMIXAgent
 from .mappo.agent import MAPPOAgent
-from ..core.config import EnvConfig
-from ..core.network import build_network
+from core.config import EnvConfig
+from core.network import build_network
 
 
 def make_agent(

@@ -6,9 +6,9 @@ from abc import ABC, abstractmethod
 
 import numpy as np
 
-from ..core.config import EnvConfig
-from ..core.network import build_network
-from ..core.env import MEIRPEnv
+from core.config import EnvConfig
+from core.network import build_network
+from core.env import MEIRPEnv
 
 
 class InventoryPolicy(ABC):

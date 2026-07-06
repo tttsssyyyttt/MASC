@@ -5,8 +5,8 @@ from __future__ import annotations
 from dataclasses import replace
 from typing import Optional, Sequence, Tuple
 
-from ..core.config import EnvConfig
-from ..core.env import MEIRPEnv
+from core.config import EnvConfig
+from core.env import MEIRPEnv
 from .base import InventoryPolicy
 from .base_stock import BaseStockPolicy
 from .ss_policy import SSPolicy

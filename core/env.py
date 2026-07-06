@@ -13,9 +13,9 @@ from .config import EnvConfig
 from .demand import DemandGenerator
 from .network import build_network
 from .reward import compute_reward
-from ..routing.distance import default_coords
-from ..routing.policy import RoutingPolicy
-from ..routing.types import RoutingSolution
+from routing.distance import default_coords
+from routing.policy import RoutingPolicy
+from routing.types import RoutingSolution
 
 
 class MEIRPEnv(gym.Env):

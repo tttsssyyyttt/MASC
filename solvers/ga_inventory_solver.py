@@ -6,9 +6,9 @@ from typing import List
 
 import numpy as np
 
-from ..core.config import EnvConfig
-from ..core.env import MEIRPEnv
-from ..core.network import build_network
+from core.config import EnvConfig
+from core.env import MEIRPEnv
+from core.network import build_network
 
 
 class GAInventorySolver:

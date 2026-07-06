@@ -19,8 +19,8 @@ from typing import Optional
 
 import numpy as np
 
-from ..core.config import EnvConfig
-from ..solvers.milp_solver import MILPSolver
+from core.config import EnvConfig
+from solvers.milp_solver import MILPSolver
 
 
 class MILPAdvisor:

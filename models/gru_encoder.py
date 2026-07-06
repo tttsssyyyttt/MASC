@@ -57,13 +57,14 @@ class GRUEncoder(nn.Module):
         L = self.lead_time
 
         # Split obs into time steps: (batch, N, L+1, 3)
+        hist_start = self.obs_dim - 3 * L
         # Current step: obs[:, :, 0:3]
         current = obs[:, :, :3].unsqueeze(2)  # (batch, N, 1, 3)
 
         # History steps: reshape pipeline, demand_hist, order_hist
-        pipeline = obs[:, :, 3:3+L]         # (batch, N, L)
-        demand_hist = obs[:, :, 3+L:3+2*L]  # (batch, N, L)
-        order_hist = obs[:, :, 3+2*L:3+3*L] # (batch, N, L)
+        pipeline = obs[:, :, hist_start:hist_start + L]  # (batch, N, L)
+        demand_hist = obs[:, :, hist_start + L:hist_start + 2 * L]  # (batch, N, L)
+        order_hist = obs[:, :, hist_start + 2 * L:hist_start + 3 * L]  # (batch, N, L)
 
         # Stack as features per time step: (batch, N, L, 3)
         history = torch.stack([pipeline, demand_hist, order_hist], dim=-1)
