@@ -41,7 +41,7 @@ stockout_penalty: 0.0
 fill_rate_bonus: 0.0
 order_penalty: 0.0
 service_level_target: 0.95
-service_level_penalty: 300.0
+service_level_penalty: 100.0
 # Increase initial inventory for better warm-up
 init_inventory: 40.0
 init_pipeline: 16.0
