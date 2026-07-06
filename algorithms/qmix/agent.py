@@ -128,41 +128,88 @@ class QMIXAgent(MADRLAgent):
         actions = []
         encoded = self._encode_obs(obs)
 
-        for i in range(self.n):
-            k = self.n_upstream[i]
-            if np.random.random() < epsilon:
-                # if k == 0:
-                #     action_i = np.random.randint(0, self.max_order + 1)
-                # else:
-                #     action_i = {
-                #         "q": int(np.random.randint(0, self.max_order + 1)),
-                #         "alpha": [int(np.random.randint(0, self.max_order + 1)) for _ in range(k)],
-                #     }
-                if k == 0:
-                    action_i = np.random.randint(0, self.max_order + 1)
-                elif k == 1:
-                    action_i = [int(np.random.randint(0, self.max_order + 1))]
-                else:
-                    action_i = {
-                        "q": int(np.random.randint(0, self.max_order + 1)),
-                        "alpha": [int(np.random.randint(0, self.max_order + 1)) for _ in range(k)],
-                    }
-            else:
-                with torch.no_grad():
-                    q_branches = self.q_nets[i](encoded[i].unsqueeze(0))
-                action_vals = [int(q_b.argmax(dim=1).item()) for q_b in q_branches]
-                # if k == 0:
-                #     action_i = action_vals[0]
-                # else:
-                #     action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
-                if k == 0:
-                    action_i = action_vals[0]
-                elif k == 1:
-                    action_i = [action_vals[0]]
-                else:
-                    action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
+        # for i in range(self.n):
+        #     k = self.n_upstream[i]
+        #     if np.random.random() < epsilon:
+        #         # if k == 0:
+        #         #     action_i = np.random.randint(0, self.max_order + 1)
+        #         # else:
+        #         #     action_i = {
+        #         #         "q": int(np.random.randint(0, self.max_order + 1)),
+        #         #         "alpha": [int(np.random.randint(0, self.max_order + 1)) for _ in range(k)],
+        #         #     }
+        #         if k == 0:
+        #             action_i = np.random.randint(0, self.max_order + 1)
+        #         elif k == 1:
+        #             action_i = [int(np.random.randint(0, self.max_order + 1))]
+        #         else:
+        #             action_i = {
+        #                 "q": int(np.random.randint(0, self.max_order + 1)),
+        #                 "alpha": [int(np.random.randint(0, self.max_order + 1)) for _ in range(k)],
+        #             }
+        #     else:
+        #         with torch.no_grad():
+        #             q_branches = self.q_nets[i](encoded[i].unsqueeze(0))
+        #         action_vals = [int(q_b.argmax(dim=1).item()) for q_b in q_branches]
+        #         # if k == 0:
+        #         #     action_i = action_vals[0]
+        #         # else:
+        #         #     action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
+        #         if k == 0:
+        #             action_i = action_vals[0]
+        #         elif k == 1:
+        #             action_i = [action_vals[0]]
+        #         else:
+        #             action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
+        #
+        #     actions.append(action_i)
+        old_modes = [q_net.training for q_net in self.q_nets]
+        if deterministic:
+            for q_net in self.q_nets:
+                q_net.eval()
 
-            actions.append(action_i)
+        try:
+            for i in range(self.n):
+                k = self.n_upstream[i]
+                if np.random.random() < epsilon:
+                    # Random exploration
+                    # if k == 0:
+                    #     action_i = np.random.randint(0, self.max_order + 1)
+                    # else:
+                    #     action_i = {
+                    #         "q": int(np.random.randint(0, self.max_order + 1)),
+                    #         "alpha": [int(np.random.randint(0, self.max_order + 1)) for _ in range(k)],
+                    #     }
+                    if k == 0:
+                        action_i = np.random.randint(0, self.max_order + 1)
+                    elif k == 1:
+                        action_i = [int(np.random.randint(0, self.max_order + 1))]
+                    else:
+                        action_i = {
+                            "q": int(np.random.randint(0, self.max_order + 1)),
+                            "alpha": [int(np.random.randint(0, self.max_order + 1)) for _ in range(k)],
+                        }
+                else:
+                    with torch.no_grad():
+                        q_branches = self.q_nets[i](encoded[i].unsqueeze(0))
+                    # argmax per branch
+                    action_vals = [int(q_b.argmax(dim=1).item()) for q_b in q_branches]
+                    # if k == 0:
+                    #     action_i = action_vals[0]  # single int for root nodes
+                    # else:
+                    #     action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
+                    if k == 0:
+                        action_i = action_vals[0]
+                    elif k == 1:
+                        action_i = [action_vals[0]]
+                    else:
+                        action_i = {"q": action_vals[0], "alpha": action_vals[1:]}
+
+                actions.append(action_i)
+        finally:
+            if deterministic:
+                for q_net, was_training in zip(self.q_nets, old_modes):
+                    q_net.train(was_training)
 
         return actions
 

@@ -55,7 +55,8 @@ class RolloutBuffer:
             if isinstance(action, dict):
                 return 1 + len(action.get("alpha", []))
             if isinstance(action, (list, np.ndarray)):
-                return len(action) + 1
+                # return len(action) + 1
+                return len(action)
             return 1
 
         def branch_value(action, branch_idx):
