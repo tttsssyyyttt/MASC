@@ -290,9 +290,13 @@ class QMIXAgent(MADRLAgent):
 
                 q_chosen_sum += q_b.gather(1, actions_j.unsqueeze(1)).squeeze(1)
                 q_next_max_sum += target_q_b.max(dim=1)[0]
+                q_chosen_agent = q_chosen_sum / max(1, len(q_branches))
+                q_next_agent = q_next_max_sum / max(1, len(target_q_branches))
 
-            q_chosen_list.append(q_chosen_sum)
-            q_next_max_list.append(q_next_max_sum)
+            # q_chosen_list.append(q_chosen_sum)
+            # q_next_max_list.append(q_next_max_sum)
+            q_chosen_list.append(q_chosen_agent)
+            q_next_max_list.append(q_next_agent)
 
         q_chosen_t = torch.stack(q_chosen_list, dim=1)   # (B, n_agents)
         q_next_max_t = torch.stack(q_next_max_list, dim=1)
@@ -308,7 +312,8 @@ class QMIXAgent(MADRLAgent):
         dones_t = torch.FloatTensor(batch["dones"][:, 0]).to(self.device)
 
         targets = rewards_t.unsqueeze(1) + self.gamma * q_tot_next * (1 - dones_t.unsqueeze(1))
-        qmix_loss = nn.functional.mse_loss(q_tot, targets.detach())
+        # qmix_loss = nn.functional.mse_loss(q_tot, targets.detach())
+        qmix_loss = nn.functional.smooth_l1_loss(q_tot, targets.detach())
 
         self.optimizer.zero_grad()
         qmix_loss.backward()

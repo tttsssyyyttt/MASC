@@ -68,7 +68,7 @@ class IQLAgent(MADRLAgent):
         lr: float = 1e-3,
         gamma: float = 0.99,
         epsilon_start: float = 1.0,
-        epsilon_end: float = 0.05,
+        epsilon_end: float = 0.1,
         epsilon_decay: int = 5000,
         buffer_capacity: int = 50000,
         batch_size: int = 64,

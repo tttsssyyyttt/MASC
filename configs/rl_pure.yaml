@@ -3,7 +3,7 @@
 #   python scripts/full_compare.py
 
 topo: 3layers
-ep: 1000
+ep: 300
 hard: false
 config:
 
