@@ -1,0 +1,24 @@
+# QMIX + GNN Algorithm Configuration
+algorithm: qmix
+
+# Network
+hidden_dim: 128
+mixer_hidden: 32
+
+# Training (lower lr for stability with GNN)
+lr: 0.0003
+gamma: 0.99
+epsilon_start: 1.0
+epsilon_end: 0.05
+epsilon_decay: 5000
+
+# Replay buffer
+buffer_capacity: 100000
+batch_size: 64
+
+# Target network
+target_update_freq: 300
+
+# GNN encoder
+use_gnn: true
+encoder_update_freq: 4

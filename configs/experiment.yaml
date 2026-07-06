@@ -1,0 +1,73 @@
+# Experiment Configuration
+# Combines environment + algorithm + ablation settings + evaluation
+
+# Environment
+env_config: env_3layers.yaml
+
+# Algorithms to compare (with and without GNN)
+algorithms:
+  - name: iql
+    config: algo_iql.yaml
+  - name: iql_gnn
+    config: algo_iql_gnn.yaml
+  - name: qmix
+    config: algo_qmix.yaml
+  - name: qmix_gnn
+    config: algo_qmix_gnn.yaml
+  - name: mappo
+    config: algo_mappo.yaml
+  - name: mappo_gnn
+    config: algo_mappo_gnn.yaml
+
+# Baselines to compare
+baselines:
+  - base_stock
+  - ss_policy
+
+# Training
+training:
+  episodes: 500
+  gnn_extra_episodes: 500  # GNN versions get extra training
+  eval_interval: 50
+  eval_episodes: 5
+  seed: 42
+  device: cuda
+  save_dir: checkpoints
+
+# Evaluation
+evaluation:
+  n_episodes: 10
+  n_seeds: 5
+
+# Ablation settings
+ablation:
+  enabled: true
+  groups:
+    - name: MADRL
+      use_gnn: false
+      use_sea: false
+    - name: "+GNN"
+      use_gnn: true
+      use_sea: false
+    - name: "+SEA"
+      use_gnn: false
+      use_sea: true
+    - name: "+GNN+SEA"
+      use_gnn: true
+      use_sea: true
+
+# Statistics
+statistics:
+  confidence_level: 0.95
+  tests:
+    - paired_t_test
+    - wilcoxon
+
+# Visualization
+visualization:
+  training_curve: true
+  cost_breakdown: true
+  comparison_table: true
+  attention_heatmap: true  # only when use_gnn=true
+  network_topology: true
+  save_dir: visualizations

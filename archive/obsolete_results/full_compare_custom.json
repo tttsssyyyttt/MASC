@@ -1,0 +1,124 @@
+{
+  "topo": "custom",
+  "results": {
+    "BaseStock": {
+      "avg_cost_per_step": 2782.5733333333337,
+      "avg_cost_per_step_std": 174.1077538639666,
+      "avg_fill_rate": 0.5086291318056207,
+      "avg_fill_rate_std": 0.019655131423951276,
+      "avg_stockout_rate": 0.49137086819437925,
+      "avg_stockout_rate_std": 0.019655131423951266,
+      "avg_bullwhip_cv": 3.267795032751141,
+      "avg_bullwhip_cv_std": 0.425351086078812,
+      "avg_inventory_turnover": 118.57474764684048,
+      "avg_inventory_turnover_std": 21.261352708566562
+    },
+    "(s,S)": {
+      "avg_cost_per_step": 2944.666666666667,
+      "avg_cost_per_step_std": 170.0296706133635,
+      "avg_fill_rate": 0.5035327752702728,
+      "avg_fill_rate_std": 0.011245089260564119,
+      "avg_stockout_rate": 0.49646722472972715,
+      "avg_stockout_rate_std": 0.01124508926056412,
+      "avg_bullwhip_cv": 3.9607846926566417,
+      "avg_bullwhip_cv_std": 0.5389374328187085,
+      "avg_inventory_turnover": 120.65505346394154,
+      "avg_inventory_turnover_std": 23.27462630246154
+    },
+    "MILP": {
+      "avg_cost_per_step": 354.34666666666664,
+      "avg_cost_per_step_std": 22.472250542490055,
+      "avg_fill_rate": 0.9877733894781423,
+      "avg_fill_rate_std": 0.005073051582614881,
+      "avg_stockout_rate": 0.012226610521857717,
+      "avg_stockout_rate_std": 0.005073051582614881,
+      "avg_bullwhip_cv": 1.5819585058403043,
+      "avg_bullwhip_cv_std": 0.08494697111131161,
+      "avg_inventory_turnover": 127.31972581609712,
+      "avg_inventory_turnover_std": 43.507538809616236
+    },
+    "IQL": {
+      "avg_cost_per_step": 2367.0420075958314,
+      "avg_cost_per_step_std": 199.6079175316232,
+      "avg_fill_rate": 0.7088771548726077,
+      "avg_fill_rate_std": 0.018012112955829288,
+      "avg_stockout_rate": 0.2911228451273923,
+      "avg_stockout_rate_std": 0.018012112955829288,
+      "avg_bullwhip_cv": 0.12969569108631948,
+      "avg_bullwhip_cv_std": 0.07259576129320823,
+      "avg_inventory_turnover": 79.22347954161722,
+      "avg_inventory_turnover_std": 16.484935442252983
+    },
+    "SEA-IQL": {
+      "avg_cost_per_step": 2322.6266666666666,
+      "avg_cost_per_step_std": 207.90455331446898,
+      "avg_fill_rate": 0.8089842020297668,
+      "avg_fill_rate_std": 0.024015125866219074,
+      "avg_stockout_rate": 0.19101579797023302,
+      "avg_stockout_rate_std": 0.024015125866219074,
+      "avg_bullwhip_cv": 0.32289709920050785,
+      "avg_bullwhip_cv_std": 0.02935265027617862,
+      "avg_inventory_turnover": 81.55943670830072,
+      "avg_inventory_turnover_std": 20.865739489510272
+    },
+    "QMIX": {
+      "avg_cost_per_step": 1639.3850815850815,
+      "avg_cost_per_step_std": 173.25806587665812,
+      "avg_fill_rate": 0.8193496807693752,
+      "avg_fill_rate_std": 0.011210329362456417,
+      "avg_stockout_rate": 0.18065031923062475,
+      "avg_stockout_rate_std": 0.011210329362456417,
+      "avg_bullwhip_cv": 1.0625793200909688,
+      "avg_bullwhip_cv_std": 0.1056180482651403,
+      "avg_inventory_turnover": 65.613685701114,
+      "avg_inventory_turnover_std": 13.23285503241202
+    },
+    "SEA-QMIX": {
+      "avg_cost_per_step": 2716.1973853261284,
+      "avg_cost_per_step_std": 435.2197519179893,
+      "avg_fill_rate": 0.6091624577094278,
+      "avg_fill_rate_std": 0.04701008530052633,
+      "avg_stockout_rate": 0.3908375422905722,
+      "avg_stockout_rate_std": 0.04701008530052633,
+      "avg_bullwhip_cv": 1.0943896064067438,
+      "avg_bullwhip_cv_std": 0.3558569258364169,
+      "avg_inventory_turnover": 75.39794390497839,
+      "avg_inventory_turnover_std": 19.456431930466263
+    },
+    "MAPPO": {
+      "avg_cost_per_step": 2850.34,
+      "avg_cost_per_step_std": 204.7737161953273,
+      "avg_fill_rate": 0.6903021287880777,
+      "avg_fill_rate_std": 0.003527196225771091,
+      "avg_stockout_rate": 0.3096978712119222,
+      "avg_stockout_rate_std": 0.003527196225771091,
+      "avg_bullwhip_cv": 0.0,
+      "avg_bullwhip_cv_std": 0.0,
+      "avg_inventory_turnover": 83.63840053155516,
+      "avg_inventory_turnover_std": 19.109736606887505
+    },
+    "SEA-MAPPO": {
+      "avg_cost_per_step": 1183.8933333333334,
+      "avg_cost_per_step_std": 125.4129718614112,
+      "avg_fill_rate": 0.8483146496597047,
+      "avg_fill_rate_std": 0.02973852259180784,
+      "avg_stockout_rate": 0.15168535034029518,
+      "avg_stockout_rate_std": 0.02973852259180784,
+      "avg_bullwhip_cv": 0.2745570661793456,
+      "avg_bullwhip_cv_std": 0.5491141323586912,
+      "avg_inventory_turnover": 56.6398507962758,
+      "avg_inventory_turnover_std": 14.790153989786965
+    }
+  },
+  "order": [
+    "BaseStock",
+    "(s,S)",
+    "MILP",
+    "IQL",
+    "SEA-IQL",
+    "QMIX",
+    "SEA-QMIX",
+    "MAPPO",
+    "SEA-MAPPO"
+  ]
+}

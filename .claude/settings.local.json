@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//d/Project/Python/MaSCL/**)",
+      "Bash(python -m pytest meirp_project/tests/test_core.py -v)",
+      "Bash(python -m pytest meirp_project/tests/test_bdq.py -v)",
+      "Bash(python meirp_project/scripts/quick_compare.py --topo 3layers --ep 50)",
+      "WebSearch"
+    ]
+  }
+}

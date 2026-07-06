@@ -1,0 +1,47 @@
+
+============================================================
+  custom: 5 nodes | max_order=20 | demand=10.0
+============================================================
+  BaseStock   : cost=594.6 fill=0.4803 bw=1.9805
+  (s,S)       : cost=646.4 fill=0.4562 bw=2.6683
+  MILP        : cost=83.4 fill=0.9999 bw=1.3337
+
+  [IQL] training 200ep...
+    [IQL] Ep100/200 R=0.0
+    [IQL] Ep200/200 R=0.0
+    IQL         : cost=424.7 fill=0.8704 bw=0.0630 time=91s
+    [SEA-IQL] Ep100/200 R=0.0
+    [SEA-IQL] Ep200/200 R=0.0
+    SEA-IQL     : cost=898.3 fill=0.5835 bw=1.8048 time=91s SPC=0.22% Exp=0.22%
+
+  [QMIX] training 200ep...
+    [QMIX] Ep100/200 R=0.0
+    [QMIX] Ep200/200 R=0.0
+    QMIX        : cost=506.6 fill=0.8473 bw=0.0586 time=101s
+    [SEA-QMIX] Ep100/200 R=0.0
+    [SEA-QMIX] Ep200/200 R=0.0
+    SEA-QMIX    : cost=208.3 fill=0.9795 bw=0.3525 time=109s SPC=1.10% Exp=1.10%
+
+  [MAPPO] training 200ep...
+    [MAPPO] Ep100/200 R=0.0
+    [MAPPO] Ep200/200 R=0.0
+    MAPPO       : cost=529.6 fill=0.7703 bw=0.0000 time=87s
+    [SEA-MAPPO] Ep100/200 R=0.0
+    [SEA-MAPPO] Ep200/200 R=0.0
+    SEA-MAPPO   : cost=756.2 fill=0.6073 bw=0.0000 time=84s SPC=0.20% Exp=0.20%
+
+  ======================================================================
+  Results Summary: custom
+  Algorithm         Cost/Step  Fill Rate   Bullwhip   Stockout
+  --------------------------------------------------------
+  BaseStock             594.6     0.4803     1.9805     0.5197
+  (s,S)                 646.4     0.4562     2.6683     0.5438
+  MILP                   83.4 *     0.9999 *     1.3337     0.0001
+  IQL                   424.7     0.8704     0.0630     0.1296
+  SEA-IQL               898.3     0.5835     1.8048     0.4165
+  QMIX                  506.6     0.8473     0.0586     0.1527
+  SEA-QMIX              208.3     0.9795     0.3525     0.0205
+  MAPPO                 529.6     0.7703     0.0000     0.2297
+  SEA-MAPPO             756.2     0.6073     0.0000     0.3927
+
+  Saved: D:\Project\Python\MaSCL\meirp_project\results\full_compare_custom.json

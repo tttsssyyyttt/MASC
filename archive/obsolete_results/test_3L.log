@@ -1,0 +1,41 @@
+
+============================================================
+  custom: 9 nodes | max_order=30 | demand=12.0
+============================================================
+  BaseStock   : cost=2782.6 fill=0.5086 bw=3.2678
+  (s,S)       : cost=2944.7 fill=0.5035 bw=3.9608
+  MILP        : cost=354.3 fill=0.9878 bw=1.5820
+
+  [IQL] training 150ep...
+    [IQL] Ep100/150 R=-394.2
+    IQL         : cost=2697.3 fill=0.7148 bw=1.4510 time=125s
+    [SEA-IQL] Ep100/150 R=-371.6
+    SEA-IQL     : cost=1466.3 fill=0.8528 bw=1.2565 time=122s SPC=0.78% Exp=0.78%
+
+  [QMIX] training 150ep...
+    [QMIX] Ep100/150 R=-335.0
+    QMIX        : cost=1928.7 fill=0.7713 bw=1.0565 time=122s
+    [SEA-QMIX] Ep100/150 R=-269.5
+    SEA-QMIX    : cost=1716.0 fill=0.7592 bw=0.8329 time=102s SPC=0.36% Exp=0.36%
+
+  [MAPPO] training 150ep...
+    [MAPPO] Ep100/150 R=-386.5
+    MAPPO       : cost=2251.8 fill=0.7100 bw=1.7781 time=103s
+    [SEA-MAPPO] Ep100/150 R=-394.7
+    SEA-MAPPO   : cost=2398.7 fill=0.7452 bw=1.7744 time=104s SPC=0.73% Exp=0.73%
+
+  ======================================================================
+  Results Summary: custom
+  Algorithm         Cost/Step  Fill Rate   Bullwhip   Stockout
+  --------------------------------------------------------
+  BaseStock            2782.6     0.5086     3.2678     0.4914
+  (s,S)                2944.7     0.5035     3.9608     0.4965
+  MILP                  354.3 *     0.9878 *     1.5820     0.0122
+  IQL                  2697.3     0.7148     1.4510     0.2852
+  SEA-IQL              1466.3     0.8528     1.2565     0.1472
+  QMIX                 1928.7     0.7713     1.0565     0.2287
+  SEA-QMIX             1716.0     0.7592     0.8329     0.2408
+  MAPPO                2251.8     0.7100     1.7781     0.2900
+  SEA-MAPPO            2398.7     0.7452     1.7744     0.2548
+
+  Saved: D:\Project\Python\MaSCL\meirp_project\results\full_compare_custom.json

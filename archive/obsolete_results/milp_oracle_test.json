@@ -1,0 +1,93 @@
+[
+  {
+    "topo": "2layers",
+    "pattern": "poisson",
+    "supply": 40,
+    "avg_demand": 31.2,
+    "ratio": 1.28,
+    "cost_mean": 208.8,
+    "cost_std": 12.4,
+    "fill_mean": 0.9742,
+    "fill_std": 0.0347,
+    "fill_min": 0.9021,
+    "bw_mean": 1.6591
+  },
+  {
+    "topo": "3layers",
+    "pattern": "poisson",
+    "supply": 60,
+    "avg_demand": 49.0,
+    "ratio": 1.23,
+    "cost_mean": 970.9,
+    "cost_std": 99.1,
+    "fill_mean": 0.9276,
+    "fill_std": 0.0162,
+    "fill_min": 0.8824,
+    "bw_mean": 1.5259
+  },
+  {
+    "topo": "4layers",
+    "pattern": "poisson",
+    "supply": 40,
+    "avg_demand": 30.6,
+    "ratio": 1.31,
+    "cost_mean": 792.3,
+    "cost_std": 194.1,
+    "fill_mean": 0.9336,
+    "fill_std": 0.0322,
+    "fill_min": 0.8699,
+    "bw_mean": 1.3648
+  },
+  {
+    "topo": "3layers",
+    "pattern": "normal",
+    "supply": 60,
+    "avg_demand": 48.0,
+    "ratio": 1.25,
+    "cost_mean": 932.4,
+    "cost_std": 157.4,
+    "fill_mean": 0.9347,
+    "fill_std": 0.0185,
+    "fill_min": 0.89,
+    "bw_mean": 1.2464
+  },
+  {
+    "topo": "3layers",
+    "pattern": "seasonal",
+    "supply": 60,
+    "avg_demand": 25.1,
+    "ratio": 2.39,
+    "cost_mean": 953.0,
+    "cost_std": 35.7,
+    "fill_mean": 0.9992,
+    "fill_std": 0.0002,
+    "fill_min": 0.999,
+    "bw_mean": 1.4364
+  },
+  {
+    "topo": "3layers",
+    "pattern": "trend",
+    "supply": 60,
+    "avg_demand": 48.5,
+    "ratio": 1.24,
+    "cost_mean": 864.9,
+    "cost_std": 35.5,
+    "fill_mean": 0.9825,
+    "fill_std": 0.0056,
+    "fill_min": 0.9757,
+    "bw_mean": 1.2155
+  },
+  {
+    "topo": "3layers",
+    "pattern": "shock",
+    "supply": 60,
+    "avg_demand": 52.1,
+    "ratio": 1.15,
+    "cost_mean": 1026.4,
+    "cost_std": 107.3,
+    "fill_mean": 0.9238,
+    "fill_std": 0.015,
+    "fill_min": 0.8821,
+    "bw_mean": 0.9497
+  }
+]

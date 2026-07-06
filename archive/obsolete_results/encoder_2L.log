@@ -1,0 +1,47 @@
+
+============================================================
+  custom: 5 nodes | max_order=20 | demand=10.0
+============================================================
+  BaseStock   : cost=594.6 fill=0.4803 bw=1.9805
+  (s,S)       : cost=646.4 fill=0.4562 bw=2.6683
+  MILP        : cost=83.4 fill=0.9999 bw=1.3337
+
+  [IQL] training 200ep...
+    [IQL] Ep100/200 R=-626.5
+    [IQL] Ep200/200 R=-585.7
+    IQL         : cost=816.0 fill=0.6079 bw=1.7945 time=93s
+    [SEA-IQL] Ep100/200 R=-652.3
+    [SEA-IQL] Ep200/200 R=-610.7
+    SEA-IQL     : cost=850.2 fill=0.5799 bw=0.7003 time=91s SPC=0.28% Exp=0.28%
+
+  [QMIX] training 200ep...
+    [QMIX] Ep100/200 R=-572.4
+    [QMIX] Ep200/200 R=-695.8
+    QMIX        : cost=402.2 fill=0.8919 bw=0.1160 time=101s
+    [SEA-QMIX] Ep100/200 R=-606.4
+    [SEA-QMIX] Ep200/200 R=-996.5
+    SEA-QMIX    : cost=775.6 fill=0.5634 bw=0.6089 time=113s SPC=0.53% Exp=0.53%
+
+  [MAPPO] training 200ep...
+    [MAPPO] Ep100/200 R=-645.9
+    [MAPPO] Ep200/200 R=-635.8
+    MAPPO       : cost=543.3 fill=0.7489 bw=0.0000 time=87s
+    [SEA-MAPPO] Ep100/200 R=-673.5
+    [SEA-MAPPO] Ep200/200 R=-618.1
+    SEA-MAPPO   : cost=614.0 fill=0.7552 bw=0.0000 time=85s SPC=0.27% Exp=0.27%
+
+  ======================================================================
+  Results Summary: custom
+  Algorithm         Cost/Step  Fill Rate   Bullwhip   Stockout
+  --------------------------------------------------------
+  BaseStock             594.6     0.4803     1.9805     0.5197
+  (s,S)                 646.4     0.4562     2.6683     0.5438
+  MILP                   83.4 *     0.9999 *     1.3337     0.0001
+  IQL                   816.0     0.6079     1.7945     0.3921
+  SEA-IQL               850.2     0.5799     0.7003     0.4201
+  QMIX                  402.2     0.8919     0.1160     0.1081
+  SEA-QMIX              775.6     0.5634     0.6089     0.4366
+  MAPPO                 543.3     0.7489     0.0000     0.2511
+  SEA-MAPPO             614.0     0.7552     0.0000     0.2448
+
+  Saved: D:\Project\Python\MaSCL\meirp_project\results\full_compare_custom.json

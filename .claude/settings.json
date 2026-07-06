@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python meirp_project/tests/run_core_tests.py)",
+      "Bash(python -c ' *)",
+      "Bash(set PYTHONIOENCODING=utf-8)",
+      "Bash(python meirp_project/scripts/run_full_comparison.py --episodes 200 --gnn-extra 100 --seeds 3 --topology 3layer)",
+      "Bash(python meirp_project/scripts/run_full_comparison.py --episodes 200 --gnn-extra 100 --seeds 3 --topology 3layers)"
+    ]
+  }
+}

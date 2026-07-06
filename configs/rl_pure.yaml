@@ -1,0 +1,30 @@
+# Default pure-RL comparison run.
+# Run from project root:
+#   python scripts/full_compare.py
+
+topo: 3layers
+ep: 1000
+hard: false
+config:
+
+device: cuda
+eval_seeds: 1
+rl_eval_interval: 20
+rl_eval_seeds: 1
+output_prefix: conv_pure_3layers_ep1000_int20_seed1
+
+skip_rl: false
+skip_sea: true
+skip_milp: true
+include_gnn_rl: false
+
+transport_cost: 1.0
+transport_weight:
+vehicle_capacity:
+vehicle_count:
+
+ga_pop: 16
+ga_gen: 10
+alns_iter: 30
+ortools_horizon: 5
+include_ortools: false

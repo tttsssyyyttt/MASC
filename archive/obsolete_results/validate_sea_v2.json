@@ -1,0 +1,1040 @@
+{
+  "2layers": {
+    "topology": "2layers",
+    "n_nodes": 5,
+    "max_order": 20,
+    "bs_fill": 0.5224492375824146,
+    "bs_cost": 402.5666666666666,
+    "bs_bullwhip": 3.9593148539228444,
+    "pure_final_fill": 0.9990545101563952,
+    "pure_final_cost": 407.8471428571429,
+    "pure_final_bw": 0.6753712791786755,
+    "sea_final_fill": 0.9648445286266798,
+    "sea_final_cost": 239.93666666666667,
+    "sea_final_bw": 3.217990115465755,
+    "pure_time": 83.52603435516357,
+    "sea_time": 86.33677387237549,
+    "escalation": {
+      "spc_rate": 0.06345679012345679,
+      "algo_rate": 0.06345679012345679,
+      "human_rate": 0.006666666666666667,
+      "total_steps": 8100
+    },
+    "pure_curve": [
+      {
+        "ep": 10,
+        "avg_reward": -364.1564577750652,
+        "avg_fill_rate": 0.6806602618513405,
+        "avg_cost_per_step": 366.62222222222226,
+        "avg_bullwhip_cv": 0.11326863629521529,
+        "avg_stockout_rate": 0.3193397381486595
+      },
+      {
+        "ep": 20,
+        "avg_reward": -311.25174612888384,
+        "avg_fill_rate": 0.7409317746073133,
+        "avg_cost_per_step": 320.06928544706324,
+        "avg_bullwhip_cv": 2.1570173267718222,
+        "avg_stockout_rate": 0.2590682253926867
+      },
+      {
+        "ep": 30,
+        "avg_reward": -354.00288438785776,
+        "avg_fill_rate": 0.7301541226696768,
+        "avg_cost_per_step": 269.3488888889933,
+        "avg_bullwhip_cv": 0.015356814860843353,
+        "avg_stockout_rate": 0.2698458773303231
+      },
+      {
+        "ep": 40,
+        "avg_reward": -392.69319146751263,
+        "avg_fill_rate": 0.8715805318484464,
+        "avg_cost_per_step": 242.97301587301584,
+        "avg_bullwhip_cv": 1.8303174203610901,
+        "avg_stockout_rate": 0.12841946815155358
+      },
+      {
+        "ep": 50,
+        "avg_reward": -284.5442027609462,
+        "avg_fill_rate": 0.8994553716223308,
+        "avg_cost_per_step": 313.7158730158724,
+        "avg_bullwhip_cv": 2.019507565704695,
+        "avg_stockout_rate": 0.10054462837766931
+      },
+      {
+        "ep": 60,
+        "avg_reward": -278.3068865432758,
+        "avg_fill_rate": 0.8610512041636563,
+        "avg_cost_per_step": 568.1549019607843,
+        "avg_bullwhip_cv": 0.9310368169531006,
+        "avg_stockout_rate": 0.13894879583634367
+      },
+      {
+        "ep": 70,
+        "avg_reward": -291.84036809729713,
+        "avg_fill_rate": 0.9025037264281787,
+        "avg_cost_per_step": 373.5222222222222,
+        "avg_bullwhip_cv": 0.5100862772975258,
+        "avg_stockout_rate": 0.09749627357182138
+      },
+      {
+        "ep": 80,
+        "avg_reward": -245.21022552273834,
+        "avg_fill_rate": 0.9694302949845325,
+        "avg_cost_per_step": 481.07070707070716,
+        "avg_bullwhip_cv": 0.4416266491261895,
+        "avg_stockout_rate": 0.030569705015467557
+      },
+      {
+        "ep": 90,
+        "avg_reward": -284.60648128321884,
+        "avg_fill_rate": 0.9201129785073836,
+        "avg_cost_per_step": 409.0,
+        "avg_bullwhip_cv": 0.051910640582041236,
+        "avg_stockout_rate": 0.07988702149261635
+      },
+      {
+        "ep": 100,
+        "avg_reward": -274.6665021734526,
+        "avg_fill_rate": 0.8943409372140092,
+        "avg_cost_per_step": 380.7744855967078,
+        "avg_bullwhip_cv": 0.8983388591815021,
+        "avg_stockout_rate": 0.10565906278599087
+      },
+      {
+        "ep": 110,
+        "avg_reward": -213.70449985713654,
+        "avg_fill_rate": 0.8944473527456095,
+        "avg_cost_per_step": 245.33333333333334,
+        "avg_bullwhip_cv": 1.4762313719425906,
+        "avg_stockout_rate": 0.10555264725439058
+      },
+      {
+        "ep": 120,
+        "avg_reward": -207.94727155372962,
+        "avg_fill_rate": 0.9086373526727994,
+        "avg_cost_per_step": 413.20211640211636,
+        "avg_bullwhip_cv": 0.19225205766941514,
+        "avg_stockout_rate": 0.09136264732720063
+      },
+      {
+        "ep": 130,
+        "avg_reward": -388.54220197576166,
+        "avg_fill_rate": 0.546936098676889,
+        "avg_cost_per_step": 405.4546296296353,
+        "avg_bullwhip_cv": 0.5692420757416816,
+        "avg_stockout_rate": 0.45306390132311103
+      },
+      {
+        "ep": 140,
+        "avg_reward": -379.9361999721594,
+        "avg_fill_rate": 0.8752914541974258,
+        "avg_cost_per_step": 342.018518518488,
+        "avg_bullwhip_cv": 0.1741497538991503,
+        "avg_stockout_rate": 0.12470854580257418
+      },
+      {
+        "ep": 150,
+        "avg_reward": -300.01147244164696,
+        "avg_fill_rate": 0.9154026587319698,
+        "avg_cost_per_step": 251.45555555555552,
+        "avg_bullwhip_cv": 0.43227824277769794,
+        "avg_stockout_rate": 0.08459734126803016
+      },
+      {
+        "ep": 160,
+        "avg_reward": -134.01893006379262,
+        "avg_fill_rate": 0.9278786434767765,
+        "avg_cost_per_step": 315.8888888888889,
+        "avg_bullwhip_cv": 0.047033480224580725,
+        "avg_stockout_rate": 0.07212135652322345
+      },
+      {
+        "ep": 170,
+        "avg_reward": -121.28310719559393,
+        "avg_fill_rate": 0.9479347664836423,
+        "avg_cost_per_step": 390.8063492063493,
+        "avg_bullwhip_cv": 0.44259644705032103,
+        "avg_stockout_rate": 0.05206523351635772
+      },
+      {
+        "ep": 180,
+        "avg_reward": -222.2411604554865,
+        "avg_fill_rate": 0.9345990531550324,
+        "avg_cost_per_step": 342.88783068783073,
+        "avg_bullwhip_cv": 0.4670783087764714,
+        "avg_stockout_rate": 0.06540094684496749
+      },
+      {
+        "ep": 190,
+        "avg_reward": -50.532336436510356,
+        "avg_fill_rate": 0.9043040110170225,
+        "avg_cost_per_step": 417.74063964710086,
+        "avg_bullwhip_cv": 0.08704397634045045,
+        "avg_stockout_rate": 0.09569598898297753
+      },
+      {
+        "ep": 200,
+        "avg_reward": -102.13836712196682,
+        "avg_fill_rate": 0.998517524363868,
+        "avg_cost_per_step": 399.7851851851852,
+        "avg_bullwhip_cv": 0.6578284841145408,
+        "avg_stockout_rate": 0.001482475636132019
+      }
+    ],
+    "sea_curve": [
+      {
+        "ep": 10,
+        "avg_reward": -332.7749747062886,
+        "avg_fill_rate": 0.6111690946184428,
+        "avg_cost_per_step": 478.73333333333335,
+        "avg_bullwhip_cv": 2.474623039683319,
+        "avg_stockout_rate": 0.38883090538155723
+      },
+      {
+        "ep": 20,
+        "avg_reward": -322.71041291407766,
+        "avg_fill_rate": 0.8198684077272477,
+        "avg_cost_per_step": 313.21746031746034,
+        "avg_bullwhip_cv": 2.6053618246516086,
+        "avg_stockout_rate": 0.18013159227275233
+      },
+      {
+        "ep": 30,
+        "avg_reward": -349.3489228604588,
+        "avg_fill_rate": 0.6630989785498217,
+        "avg_cost_per_step": 498.0666666666666,
+        "avg_bullwhip_cv": 3.2592434890880355,
+        "avg_stockout_rate": 0.33690102145017836
+      },
+      {
+        "ep": 40,
+        "avg_reward": -325.1485418650901,
+        "avg_fill_rate": 0.5382382745921804,
+        "avg_cost_per_step": 646.181818181818,
+        "avg_bullwhip_cv": 2.656315634170253,
+        "avg_stockout_rate": 0.4617617254078195
+      },
+      {
+        "ep": 50,
+        "avg_reward": -325.6190084683091,
+        "avg_fill_rate": 0.6721742003724734,
+        "avg_cost_per_step": 315.0313131313131,
+        "avg_bullwhip_cv": 1.9665899698876201,
+        "avg_stockout_rate": 0.32782579962752656
+      },
+      {
+        "ep": 60,
+        "avg_reward": -337.2610987130232,
+        "avg_fill_rate": 0.8890331328598456,
+        "avg_cost_per_step": 355.80707070707075,
+        "avg_bullwhip_cv": 2.9124114744010154,
+        "avg_stockout_rate": 0.1109668671401544
+      },
+      {
+        "ep": 70,
+        "avg_reward": -335.05372634424435,
+        "avg_fill_rate": 0.7637986440095358,
+        "avg_cost_per_step": 339.77241379310345,
+        "avg_bullwhip_cv": 2.045670821198788,
+        "avg_stockout_rate": 0.2362013559904643
+      },
+      {
+        "ep": 80,
+        "avg_reward": -332.34348532953334,
+        "avg_fill_rate": 0.8187647122506547,
+        "avg_cost_per_step": 496.31111111111113,
+        "avg_bullwhip_cv": 2.5223008825629836,
+        "avg_stockout_rate": 0.18123528774934536
+      },
+      {
+        "ep": 90,
+        "avg_reward": -439.7805143328048,
+        "avg_fill_rate": 0.8137371323073751,
+        "avg_cost_per_step": 588.5111111111111,
+        "avg_bullwhip_cv": 2.0777807489630504,
+        "avg_stockout_rate": 0.1862628676926249
+      },
+      {
+        "ep": 100,
+        "avg_reward": -259.4319817364484,
+        "avg_fill_rate": 0.8257380861842839,
+        "avg_cost_per_step": 476.1160493827162,
+        "avg_bullwhip_cv": 2.4093077070896043,
+        "avg_stockout_rate": 0.17426191381571612
+      },
+      {
+        "ep": 110,
+        "avg_reward": -303.50956864860365,
+        "avg_fill_rate": 0.7286839749841111,
+        "avg_cost_per_step": 438.3931623931671,
+        "avg_bullwhip_cv": 2.51141990887145,
+        "avg_stockout_rate": 0.2713160250158888
+      },
+      {
+        "ep": 120,
+        "avg_reward": -154.83426539769968,
+        "avg_fill_rate": 0.9479059469883263,
+        "avg_cost_per_step": 304.6376068376068,
+        "avg_bullwhip_cv": 2.872717555111846,
+        "avg_stockout_rate": 0.052094053011673726
+      },
+      {
+        "ep": 130,
+        "avg_reward": -114.14162337819248,
+        "avg_fill_rate": 0.906405369492355,
+        "avg_cost_per_step": 303.4926846100759,
+        "avg_bullwhip_cv": 2.5858204935336437,
+        "avg_stockout_rate": 0.09359463050764498
+      },
+      {
+        "ep": 140,
+        "avg_reward": -72.62548352889738,
+        "avg_fill_rate": 1.0,
+        "avg_cost_per_step": 374.8777777777778,
+        "avg_bullwhip_cv": 1.1346228842257173,
+        "avg_stockout_rate": 0.0
+      },
+      {
+        "ep": 150,
+        "avg_reward": -68.5942396814136,
+        "avg_fill_rate": 0.9122504064962752,
+        "avg_cost_per_step": 317.7306878306878,
+        "avg_bullwhip_cv": 2.930585028803445,
+        "avg_stockout_rate": 0.0877495935037248
+      },
+      {
+        "ep": 160,
+        "avg_reward": -35.20875560109143,
+        "avg_fill_rate": 0.8323221860906042,
+        "avg_cost_per_step": 359.33090121605863,
+        "avg_bullwhip_cv": 3.315385714973526,
+        "avg_stockout_rate": 0.16767781390939585
+      },
+      {
+        "ep": 170,
+        "avg_reward": -34.90994363753275,
+        "avg_fill_rate": 1.0,
+        "avg_cost_per_step": 368.5444444444444,
+        "avg_bullwhip_cv": 0.6109521437406871,
+        "avg_stockout_rate": 0.0
+      },
+      {
+        "ep": 180,
+        "avg_reward": -30.46383003033003,
+        "avg_fill_rate": 0.8450422164641497,
+        "avg_cost_per_step": 362.02331154684106,
+        "avg_bullwhip_cv": 3.0050731255547496,
+        "avg_stockout_rate": 0.15495778353585035
+      },
+      {
+        "ep": 190,
+        "avg_reward": -57.52216539685278,
+        "avg_fill_rate": 0.8880180266588379,
+        "avg_cost_per_step": 331.980808080808,
+        "avg_bullwhip_cv": 3.0833852817294285,
+        "avg_stockout_rate": 0.11198197334116226
+      },
+      {
+        "ep": 200,
+        "avg_reward": -34.20821763277376,
+        "avg_fill_rate": 1.0,
+        "avg_cost_per_step": 230.24444444444444,
+        "avg_bullwhip_cv": 3.3244413064994442,
+        "avg_stockout_rate": 0.0
+      }
+    ]
+  },
+  "3layers": {
+    "topology": "3layers",
+    "n_nodes": 9,
+    "max_order": 30,
+    "bs_fill": 0.7441155310637585,
+    "bs_cost": 985.0777777777779,
+    "bs_bullwhip": 8.322972094266648,
+    "pure_final_fill": 0.9541518963660801,
+    "pure_final_cost": 1368.315534635412,
+    "pure_final_bw": 3.446161620026916,
+    "sea_final_fill": 0.9888720644065085,
+    "sea_final_cost": 1274.1911202686201,
+    "sea_final_bw": 4.6265886666914495,
+    "pure_time": 141.97160530090332,
+    "sea_time": 143.71819591522217,
+    "escalation": {
+      "spc_rate": 0.06234567901234568,
+      "algo_rate": 0.06234567901234568,
+      "human_rate": 0.010617283950617284,
+      "total_steps": 8100
+    },
+    "pure_curve": [
+      {
+        "ep": 10,
+        "avg_reward": -68.99471981426016,
+        "avg_fill_rate": 0.8366567981988653,
+        "avg_cost_per_step": 845.7444444444444,
+        "avg_bullwhip_cv": 0.5972997809594954,
+        "avg_stockout_rate": 0.16334320180113462
+      },
+      {
+        "ep": 20,
+        "avg_reward": -61.04302943583268,
+        "avg_fill_rate": 0.9629341885702333,
+        "avg_cost_per_step": 1145.6839019851116,
+        "avg_bullwhip_cv": 0.5657540560709869,
+        "avg_stockout_rate": 0.03706581142976669
+      },
+      {
+        "ep": 30,
+        "avg_reward": -56.08904833033972,
+        "avg_fill_rate": 0.920717715694794,
+        "avg_cost_per_step": 1321.3228738759137,
+        "avg_bullwhip_cv": 3.1861982394917994,
+        "avg_stockout_rate": 0.07928228430520597
+      },
+      {
+        "ep": 40,
+        "avg_reward": -59.53417735011974,
+        "avg_fill_rate": 0.9408170810856866,
+        "avg_cost_per_step": 1513.709469987977,
+        "avg_bullwhip_cv": 1.1753196422045724,
+        "avg_stockout_rate": 0.0591829189143133
+      },
+      {
+        "ep": 50,
+        "avg_reward": -50.446090476143766,
+        "avg_fill_rate": 0.9366878555352005,
+        "avg_cost_per_step": 1653.5248020282297,
+        "avg_bullwhip_cv": 1.1592868211333922,
+        "avg_stockout_rate": 0.06331214446479945
+      },
+      {
+        "ep": 60,
+        "avg_reward": -45.65627224501041,
+        "avg_fill_rate": 0.9920654535516399,
+        "avg_cost_per_step": 1249.2498666498693,
+        "avg_bullwhip_cv": 1.0477369369941751,
+        "avg_stockout_rate": 0.007934546448360114
+      },
+      {
+        "ep": 70,
+        "avg_reward": -26.777316578098684,
+        "avg_fill_rate": 0.9668554587359593,
+        "avg_cost_per_step": 1331.5482920807135,
+        "avg_bullwhip_cv": 2.254839960968632,
+        "avg_stockout_rate": 0.033144541264040574
+      },
+      {
+        "ep": 80,
+        "avg_reward": -51.31223176626351,
+        "avg_fill_rate": 0.9430305925017235,
+        "avg_cost_per_step": 1376.416461699457,
+        "avg_bullwhip_cv": 1.7023505108852588,
+        "avg_stockout_rate": 0.056969407498276614
+      },
+      {
+        "ep": 90,
+        "avg_reward": -25.463784978486,
+        "avg_fill_rate": 0.9350905569179776,
+        "avg_cost_per_step": 1423.4864162802105,
+        "avg_bullwhip_cv": 2.157897837551867,
+        "avg_stockout_rate": 0.06490944308202251
+      },
+      {
+        "ep": 100,
+        "avg_reward": -39.80028654297051,
+        "avg_fill_rate": 0.9524898415246031,
+        "avg_cost_per_step": 1484.3146962016299,
+        "avg_bullwhip_cv": 2.862519785238154,
+        "avg_stockout_rate": 0.04751015847539686
+      },
+      {
+        "ep": 110,
+        "avg_reward": -26.603275882573076,
+        "avg_fill_rate": 0.9257319274056819,
+        "avg_cost_per_step": 1478.0301705990569,
+        "avg_bullwhip_cv": 2.0207319432168,
+        "avg_stockout_rate": 0.07426807259431804
+      },
+      {
+        "ep": 120,
+        "avg_reward": -26.971706516126538,
+        "avg_fill_rate": 0.9096495999022768,
+        "avg_cost_per_step": 1121.5449361409353,
+        "avg_bullwhip_cv": 2.537124718396772,
+        "avg_stockout_rate": 0.09035040009772315
+      },
+      {
+        "ep": 130,
+        "avg_reward": -26.655438878694543,
+        "avg_fill_rate": 0.9615451806089994,
+        "avg_cost_per_step": 1343.2035628200263,
+        "avg_bullwhip_cv": 1.2183771166522013,
+        "avg_stockout_rate": 0.038454819391000594
+      },
+      {
+        "ep": 140,
+        "avg_reward": -30.524664649483366,
+        "avg_fill_rate": 0.9685793221509895,
+        "avg_cost_per_step": 1343.3174570894619,
+        "avg_bullwhip_cv": 2.7904321728364585,
+        "avg_stockout_rate": 0.031420677849010405
+      },
+      {
+        "ep": 150,
+        "avg_reward": -32.89147588428701,
+        "avg_fill_rate": 0.9314271798893069,
+        "avg_cost_per_step": 1763.0710452961675,
+        "avg_bullwhip_cv": 1.7884368118972962,
+        "avg_stockout_rate": 0.06857282011069295
+      },
+      {
+        "ep": 160,
+        "avg_reward": -11.523539144089865,
+        "avg_fill_rate": 0.972574884718919,
+        "avg_cost_per_step": 1429.1899830232596,
+        "avg_bullwhip_cv": 2.172018835276433,
+        "avg_stockout_rate": 0.02742511528108101
+      },
+      {
+        "ep": 170,
+        "avg_reward": -11.936842850925066,
+        "avg_fill_rate": 0.9685495564345493,
+        "avg_cost_per_step": 1329.9608095466476,
+        "avg_bullwhip_cv": 2.464823177628417,
+        "avg_stockout_rate": 0.03145044356545068
+      },
+      {
+        "ep": 180,
+        "avg_reward": -7.456580987159808,
+        "avg_fill_rate": 0.9738701518798424,
+        "avg_cost_per_step": 1258.048658641693,
+        "avg_bullwhip_cv": 3.0202171942487666,
+        "avg_stockout_rate": 0.026129848120157655
+      },
+      {
+        "ep": 190,
+        "avg_reward": -9.01882526748832,
+        "avg_fill_rate": 0.9956074049140279,
+        "avg_cost_per_step": 1195.7115379938302,
+        "avg_bullwhip_cv": 3.2798164457658814,
+        "avg_stockout_rate": 0.00439259508597208
+      },
+      {
+        "ep": 200,
+        "avg_reward": -5.213352724044384,
+        "avg_fill_rate": 0.9557609632036975,
+        "avg_cost_per_step": 1359.8745681536382,
+        "avg_bullwhip_cv": 3.5871686147704485,
+        "avg_stockout_rate": 0.04423903679630244
+      }
+    ],
+    "sea_curve": [
+      {
+        "ep": 10,
+        "avg_reward": -61.64218448801013,
+        "avg_fill_rate": 0.7816083907249957,
+        "avg_cost_per_step": 1159.8130718954246,
+        "avg_bullwhip_cv": 6.141260461130496,
+        "avg_stockout_rate": 0.21839160927500437
+      },
+      {
+        "ep": 20,
+        "avg_reward": -60.10999737120685,
+        "avg_fill_rate": 0.8706754794133972,
+        "avg_cost_per_step": 984.9652173913014,
+        "avg_bullwhip_cv": 3.3477443704320167,
+        "avg_stockout_rate": 0.12932452058660282
+      },
+      {
+        "ep": 30,
+        "avg_reward": -62.02369603212816,
+        "avg_fill_rate": 0.8157130159973507,
+        "avg_cost_per_step": 861.4976190476192,
+        "avg_bullwhip_cv": 7.3506998840551665,
+        "avg_stockout_rate": 0.18428698400264934
+      },
+      {
+        "ep": 40,
+        "avg_reward": -58.00179691126533,
+        "avg_fill_rate": 0.940651364803494,
+        "avg_cost_per_step": 1155.871960066078,
+        "avg_bullwhip_cv": 3.321825166849339,
+        "avg_stockout_rate": 0.05934863519650598
+      },
+      {
+        "ep": 50,
+        "avg_reward": -48.932004794834576,
+        "avg_fill_rate": 0.949550653136452,
+        "avg_cost_per_step": 1335.0662174743984,
+        "avg_bullwhip_cv": 5.134249054501411,
+        "avg_stockout_rate": 0.05044934686354785
+      },
+      {
+        "ep": 60,
+        "avg_reward": -53.38614831610114,
+        "avg_fill_rate": 0.9342823101155178,
+        "avg_cost_per_step": 1171.669890112056,
+        "avg_bullwhip_cv": 3.406672239960022,
+        "avg_stockout_rate": 0.06571768988448223
+      },
+      {
+        "ep": 70,
+        "avg_reward": -39.44997808404311,
+        "avg_fill_rate": 0.9392340396406423,
+        "avg_cost_per_step": 1187.4445878449171,
+        "avg_bullwhip_cv": 4.254720933782917,
+        "avg_stockout_rate": 0.06076596035935763
+      },
+      {
+        "ep": 80,
+        "avg_reward": -48.93084931645166,
+        "avg_fill_rate": 0.9011114755634929,
+        "avg_cost_per_step": 1326.9865143011236,
+        "avg_bullwhip_cv": 4.594300144321035,
+        "avg_stockout_rate": 0.09888852443650702
+      },
+      {
+        "ep": 90,
+        "avg_reward": -26.72119116484715,
+        "avg_fill_rate": 0.9288772209783053,
+        "avg_cost_per_step": 1142.7527508396436,
+        "avg_bullwhip_cv": 5.128455468955728,
+        "avg_stockout_rate": 0.07112277902169488
+      },
+      {
+        "ep": 100,
+        "avg_reward": -47.16670056050419,
+        "avg_fill_rate": 0.9241054057919665,
+        "avg_cost_per_step": 969.4418640770195,
+        "avg_bullwhip_cv": 4.07934855939502,
+        "avg_stockout_rate": 0.0758945942080335
+      },
+      {
+        "ep": 110,
+        "avg_reward": -32.9586157671256,
+        "avg_fill_rate": 0.9355326688737806,
+        "avg_cost_per_step": 1234.968668489107,
+        "avg_bullwhip_cv": 3.137943966723856,
+        "avg_stockout_rate": 0.06446733112621943
+      },
+      {
+        "ep": 120,
+        "avg_reward": -42.186052808003055,
+        "avg_fill_rate": 0.9330842011680655,
+        "avg_cost_per_step": 1235.3860815894634,
+        "avg_bullwhip_cv": 4.084817594553075,
+        "avg_stockout_rate": 0.06691579883193455
+      },
+      {
+        "ep": 130,
+        "avg_reward": -23.84591202900762,
+        "avg_fill_rate": 0.928278364799033,
+        "avg_cost_per_step": 1338.737233476422,
+        "avg_bullwhip_cv": 4.8671376471080245,
+        "avg_stockout_rate": 0.0717216352009669
+      },
+      {
+        "ep": 140,
+        "avg_reward": -39.01063591600691,
+        "avg_fill_rate": 0.922998948940562,
+        "avg_cost_per_step": 1137.5019361109144,
+        "avg_bullwhip_cv": 4.196340166091368,
+        "avg_stockout_rate": 0.07700105105943789
+      },
+      {
+        "ep": 150,
+        "avg_reward": -32.36623968591716,
+        "avg_fill_rate": 0.8800045883696059,
+        "avg_cost_per_step": 1159.5324998228725,
+        "avg_bullwhip_cv": 7.07994117400733,
+        "avg_stockout_rate": 0.11999541163039407
+      },
+      {
+        "ep": 160,
+        "avg_reward": -19.311905439825214,
+        "avg_fill_rate": 0.9654070970727036,
+        "avg_cost_per_step": 1090.878997908883,
+        "avg_bullwhip_cv": 4.43005991680132,
+        "avg_stockout_rate": 0.03459290292729648
+      },
+      {
+        "ep": 170,
+        "avg_reward": -12.460024219944165,
+        "avg_fill_rate": 0.9479688750683438,
+        "avg_cost_per_step": 985.7647754137115,
+        "avg_bullwhip_cv": 3.2886819845856734,
+        "avg_stockout_rate": 0.052031124931656146
+      },
+      {
+        "ep": 180,
+        "avg_reward": -22.612558735286633,
+        "avg_fill_rate": 0.9482874128602479,
+        "avg_cost_per_step": 993.7076507120843,
+        "avg_bullwhip_cv": 3.4183479095695186,
+        "avg_stockout_rate": 0.051712587139752166
+      },
+      {
+        "ep": 190,
+        "avg_reward": -17.28916207251346,
+        "avg_fill_rate": 0.9368774508317016,
+        "avg_cost_per_step": 1080.5636732679543,
+        "avg_bullwhip_cv": 4.389776129088884,
+        "avg_stockout_rate": 0.0631225491682984
+      },
+      {
+        "ep": 200,
+        "avg_reward": -31.16254860940585,
+        "avg_fill_rate": 0.9746372317452153,
+        "avg_cost_per_step": 1152.9350587795086,
+        "avg_bullwhip_cv": 4.217740334098177,
+        "avg_stockout_rate": 0.02536276825478471
+      }
+    ]
+  },
+  "4layers": {
+    "topology": "4layers",
+    "n_nodes": 15,
+    "max_order": 20,
+    "bs_fill": 0.646810199912271,
+    "bs_cost": 1984.761111111111,
+    "bs_bullwhip": 8.098136231569553,
+    "pure_final_fill": 0.9030705511481113,
+    "pure_final_cost": 1490.569405297224,
+    "pure_final_bw": 0.29141542318757513,
+    "sea_final_fill": 0.768687793863309,
+    "sea_final_cost": 1695.4614285714288,
+    "sea_final_bw": 2.104667756776323,
+    "pure_time": 218.91641879081726,
+    "sea_time": 228.7659592628479,
+    "escalation": {
+      "spc_rate": 0.059382716049382715,
+      "algo_rate": 0.059382716049382715,
+      "human_rate": 0.010864197530864197,
+      "total_steps": 8100
+    },
+    "pure_curve": [
+      {
+        "ep": 10,
+        "avg_reward": -669.1926652006126,
+        "avg_fill_rate": 0.5434735682517172,
+        "avg_cost_per_step": 1793.206474017681,
+        "avg_bullwhip_cv": 1.4669328001935833,
+        "avg_stockout_rate": 0.45652643174828283
+      },
+      {
+        "ep": 20,
+        "avg_reward": -760.9714413422099,
+        "avg_fill_rate": 0.8150293420766902,
+        "avg_cost_per_step": 1465.647474747475,
+        "avg_bullwhip_cv": 1.6482726007179087,
+        "avg_stockout_rate": 0.18497065792330988
+      },
+      {
+        "ep": 30,
+        "avg_reward": -716.7303853397882,
+        "avg_fill_rate": 0.8622140860478481,
+        "avg_cost_per_step": 1577.7454223227753,
+        "avg_bullwhip_cv": 0.5733183141767564,
+        "avg_stockout_rate": 0.13778591395215203
+      },
+      {
+        "ep": 40,
+        "avg_reward": -765.6896029741514,
+        "avg_fill_rate": 0.8474309632281282,
+        "avg_cost_per_step": 1469.3762512791275,
+        "avg_bullwhip_cv": 0.7827730620415602,
+        "avg_stockout_rate": 0.15256903677187186
+      },
+      {
+        "ep": 50,
+        "avg_reward": -762.6776733228382,
+        "avg_fill_rate": 0.8432531378724551,
+        "avg_cost_per_step": 1783.6916980616977,
+        "avg_bullwhip_cv": 0.10457946806822473,
+        "avg_stockout_rate": 0.1567468621275447
+      },
+      {
+        "ep": 60,
+        "avg_reward": -655.0799148884354,
+        "avg_fill_rate": 0.8270458459705899,
+        "avg_cost_per_step": 2114.5917033173264,
+        "avg_bullwhip_cv": 0.5684707533783789,
+        "avg_stockout_rate": 0.17295415402941017
+      },
+      {
+        "ep": 70,
+        "avg_reward": -677.6619883605983,
+        "avg_fill_rate": 0.8551286892049844,
+        "avg_cost_per_step": 1904.2862795388298,
+        "avg_bullwhip_cv": 0.7107233423486269,
+        "avg_stockout_rate": 0.1448713107950156
+      },
+      {
+        "ep": 80,
+        "avg_reward": -594.926418389007,
+        "avg_fill_rate": 0.8224369641812467,
+        "avg_cost_per_step": 1668.2421961908133,
+        "avg_bullwhip_cv": 2.381166769311289,
+        "avg_stockout_rate": 0.17756303581875332
+      },
+      {
+        "ep": 90,
+        "avg_reward": -533.6906237935515,
+        "avg_fill_rate": 0.8822027272998253,
+        "avg_cost_per_step": 1323.2969441581083,
+        "avg_bullwhip_cv": 0.8360209544958513,
+        "avg_stockout_rate": 0.1177972727001747
+      },
+      {
+        "ep": 100,
+        "avg_reward": -537.9453427328315,
+        "avg_fill_rate": 0.8947027709168237,
+        "avg_cost_per_step": 1498.628171650905,
+        "avg_bullwhip_cv": 2.7726677926295316,
+        "avg_stockout_rate": 0.10529722908317629
+      },
+      {
+        "ep": 110,
+        "avg_reward": -437.2036289191248,
+        "avg_fill_rate": 0.8537039798686714,
+        "avg_cost_per_step": 1880.60006945621,
+        "avg_bullwhip_cv": 1.6328377606112587,
+        "avg_stockout_rate": 0.1462960201313286
+      },
+      {
+        "ep": 120,
+        "avg_reward": -554.3385272370575,
+        "avg_fill_rate": 0.9120893740020604,
+        "avg_cost_per_step": 1169.5519435098752,
+        "avg_bullwhip_cv": 2.020745183911526,
+        "avg_stockout_rate": 0.08791062599793957
+      },
+      {
+        "ep": 130,
+        "avg_reward": -448.06244088087624,
+        "avg_fill_rate": 0.8993827707033087,
+        "avg_cost_per_step": 1059.962231954841,
+        "avg_bullwhip_cv": 1.0123293249551404,
+        "avg_stockout_rate": 0.10061722929669126
+      },
+      {
+        "ep": 140,
+        "avg_reward": -421.0503517998949,
+        "avg_fill_rate": 0.9573691883019291,
+        "avg_cost_per_step": 967.1147826086957,
+        "avg_bullwhip_cv": 0.6028754288759121,
+        "avg_stockout_rate": 0.042630811698071
+      },
+      {
+        "ep": 150,
+        "avg_reward": -284.4638584690184,
+        "avg_fill_rate": 0.8478788062803323,
+        "avg_cost_per_step": 1631.2925425633177,
+        "avg_bullwhip_cv": 0.7845259146353899,
+        "avg_stockout_rate": 0.1521211937196677
+      },
+      {
+        "ep": 160,
+        "avg_reward": -450.808673645002,
+        "avg_fill_rate": 0.8843827202470257,
+        "avg_cost_per_step": 1621.186153602337,
+        "avg_bullwhip_cv": 1.9719130948141597,
+        "avg_stockout_rate": 0.1156172797529742
+      },
+      {
+        "ep": 170,
+        "avg_reward": -462.26940268309846,
+        "avg_fill_rate": 0.8508558860231009,
+        "avg_cost_per_step": 1385.867166649775,
+        "avg_bullwhip_cv": 2.1066908941959435,
+        "avg_stockout_rate": 0.14914411397689906
+      },
+      {
+        "ep": 180,
+        "avg_reward": -312.52437289379543,
+        "avg_fill_rate": 0.8855637287254278,
+        "avg_cost_per_step": 1754.3374334477778,
+        "avg_bullwhip_cv": 2.186122465033248,
+        "avg_stockout_rate": 0.11443627127457223
+      },
+      {
+        "ep": 190,
+        "avg_reward": -412.26233045152804,
+        "avg_fill_rate": 0.8511200908673296,
+        "avg_cost_per_step": 1381.607039176606,
+        "avg_bullwhip_cv": 2.3844638330588452,
+        "avg_stockout_rate": 0.14887990913267027
+      },
+      {
+        "ep": 200,
+        "avg_reward": -353.37315686527955,
+        "avg_fill_rate": 0.9002853330638052,
+        "avg_cost_per_step": 1421.8873964124734,
+        "avg_bullwhip_cv": 0.337058834481948,
+        "avg_stockout_rate": 0.09971466693619487
+      }
+    ],
+    "sea_curve": [
+      {
+        "ep": 10,
+        "avg_reward": -685.2039052956881,
+        "avg_fill_rate": 0.8292675066747774,
+        "avg_cost_per_step": 933.2939153439153,
+        "avg_bullwhip_cv": 4.831931225753135,
+        "avg_stockout_rate": 0.17073249332522267
+      },
+      {
+        "ep": 20,
+        "avg_reward": -706.5039742317033,
+        "avg_fill_rate": 0.8254054199870469,
+        "avg_cost_per_step": 1412.072931843483,
+        "avg_bullwhip_cv": 3.2877673830962215,
+        "avg_stockout_rate": 0.17459458001295305
+      },
+      {
+        "ep": 30,
+        "avg_reward": -715.9635950946113,
+        "avg_fill_rate": 0.629961395258607,
+        "avg_cost_per_step": 2301.8353055296193,
+        "avg_bullwhip_cv": 5.759129458539442,
+        "avg_stockout_rate": 0.37003860474139305
+      },
+      {
+        "ep": 40,
+        "avg_reward": -746.2327219262121,
+        "avg_fill_rate": 0.8156142081692422,
+        "avg_cost_per_step": 1395.480294396961,
+        "avg_bullwhip_cv": 4.072948740749491,
+        "avg_stockout_rate": 0.18438579183075784
+      },
+      {
+        "ep": 50,
+        "avg_reward": -665.1874727397071,
+        "avg_fill_rate": 0.8144256291078419,
+        "avg_cost_per_step": 1218.9225393234403,
+        "avg_bullwhip_cv": 4.972663195584561,
+        "avg_stockout_rate": 0.18557437089215803
+      },
+      {
+        "ep": 60,
+        "avg_reward": -734.5828587255145,
+        "avg_fill_rate": 0.8172376280764105,
+        "avg_cost_per_step": 1549.5401673776676,
+        "avg_bullwhip_cv": 4.897093089215535,
+        "avg_stockout_rate": 0.18276237192358938
+      },
+      {
+        "ep": 70,
+        "avg_reward": -695.313187109882,
+        "avg_fill_rate": 0.8140128610104425,
+        "avg_cost_per_step": 1361.7517464017462,
+        "avg_bullwhip_cv": 3.3819895197783088,
+        "avg_stockout_rate": 0.18598713898955754
+      },
+      {
+        "ep": 80,
+        "avg_reward": -544.4433269518061,
+        "avg_fill_rate": 0.8222918831871507,
+        "avg_cost_per_step": 1772.3597883597884,
+        "avg_bullwhip_cv": 4.356795249094609,
+        "avg_stockout_rate": 0.1777081168128493
+      },
+      {
+        "ep": 90,
+        "avg_reward": -533.6632950461433,
+        "avg_fill_rate": 0.7989437974792706,
+        "avg_cost_per_step": 1602.5952449445367,
+        "avg_bullwhip_cv": 3.01531177745855,
+        "avg_stockout_rate": 0.20105620252072934
+      },
+      {
+        "ep": 100,
+        "avg_reward": -590.6243800802179,
+        "avg_fill_rate": 0.8391645728119843,
+        "avg_cost_per_step": 1410.4576409759793,
+        "avg_bullwhip_cv": 3.299886172777074,
+        "avg_stockout_rate": 0.16083542718801566
+      },
+      {
+        "ep": 110,
+        "avg_reward": -630.8282823873473,
+        "avg_fill_rate": 0.7625755706638891,
+        "avg_cost_per_step": 1961.5888888888887,
+        "avg_bullwhip_cv": 10.757545862925904,
+        "avg_stockout_rate": 0.23742442933611088
+      },
+      {
+        "ep": 120,
+        "avg_reward": -553.4328367291085,
+        "avg_fill_rate": 0.8505888313827891,
+        "avg_cost_per_step": 1176.6222222222223,
+        "avg_bullwhip_cv": 4.844530050374656,
+        "avg_stockout_rate": 0.14941116861721096
+      },
+      {
+        "ep": 130,
+        "avg_reward": -462.24609666136985,
+        "avg_fill_rate": 0.7412441053601495,
+        "avg_cost_per_step": 2140.3755789781876,
+        "avg_bullwhip_cv": 5.722919331712908,
+        "avg_stockout_rate": 0.2587558946398505
+      },
+      {
+        "ep": 140,
+        "avg_reward": -559.8549234196528,
+        "avg_fill_rate": 0.879051357120325,
+        "avg_cost_per_step": 1023.6440993788798,
+        "avg_bullwhip_cv": 3.151969950127466,
+        "avg_stockout_rate": 0.12094864287967493
+      },
+      {
+        "ep": 150,
+        "avg_reward": -256.14248285398486,
+        "avg_fill_rate": 0.8601456291645215,
+        "avg_cost_per_step": 1273.2388548281162,
+        "avg_bullwhip_cv": 4.793288979189864,
+        "avg_stockout_rate": 0.13985437083547844
+      },
+      {
+        "ep": 160,
+        "avg_reward": -298.81579685340927,
+        "avg_fill_rate": 0.8141981907430594,
+        "avg_cost_per_step": 1331.300322270322,
+        "avg_bullwhip_cv": 4.420477385183912,
+        "avg_stockout_rate": 0.18580180925694048
+      },
+      {
+        "ep": 170,
+        "avg_reward": -306.82442408855104,
+        "avg_fill_rate": 0.8532415670779009,
+        "avg_cost_per_step": 1077.6408337229238,
+        "avg_bullwhip_cv": 4.115072140786952,
+        "avg_stockout_rate": 0.1467584329220991
+      },
+      {
+        "ep": 180,
+        "avg_reward": -276.64534923127746,
+        "avg_fill_rate": 0.8663269546569706,
+        "avg_cost_per_step": 1170.3741706924313,
+        "avg_bullwhip_cv": 4.085129318308391,
+        "avg_stockout_rate": 0.13367304534302948
+      },
+      {
+        "ep": 190,
+        "avg_reward": -247.9896507305415,
+        "avg_fill_rate": 0.7894304546927433,
+        "avg_cost_per_step": 1300.3236507936508,
+        "avg_bullwhip_cv": 4.467551181729174,
+        "avg_stockout_rate": 0.21056954530725666
+      },
+      {
+        "ep": 200,
+        "avg_reward": -490.40451899582695,
+        "avg_fill_rate": 0.7481977440930428,
+        "avg_cost_per_step": 1548.8835978835975,
+        "avg_bullwhip_cv": 5.019299966571829,
+        "avg_stockout_rate": 0.25180225590695726
+      }
+    ]
+  }
+}

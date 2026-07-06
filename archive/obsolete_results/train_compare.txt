@@ -1,0 +1,149 @@
+================================================================================
+TRAINING ALL ALGORITHMS (YAML-driven)
+Environment: D:\Project\Python\MaSCL\meirp_project\configs\env_3layers.yaml
+Topology: 9 nodes, 11 edges
+Device: cuda (NVIDIA GeForce RTX 5060)
+Training episodes: 500
+Eval seeds: 5
+================================================================================
+
+--- Baselines (no training needed) ---
+  BaseStock: fill_rate=0.350, cost=1186.9
+  (s,S):     fill_rate=0.327, cost=1230.8
+
+--- Loading config & Training: iql ---
+    Config: algo_iql.yaml
+    Algorithm: iql, use_gnn: False
+    Training time: 127.2s | Final avg reward (last 50): -137138.6
+    Eval: fill_rate=0.479 +/- 0.008, cost/step=895.8, bullwhip=0.000
+
+--- Loading config & Training: iql_gnn ---
+    Config: algo_iql_gnn.yaml
+    Algorithm: iql, use_gnn: True
+    Training time: 3570.0s | Final avg reward (last 50): -137226.8
+    Eval: fill_rate=0.693 +/- 0.009, cost/step=938.9, bullwhip=0.000
+
+--- Loading config & Training: qmix ---
+    Config: algo_qmix.yaml
+    Algorithm: qmix, use_gnn: False
+    Training time: 127.8s | Final avg reward (last 50): -139788.5
+    Eval: fill_rate=0.443 +/- 0.011, cost/step=938.2, bullwhip=1.949
+
+--- Loading config & Training: qmix_gnn ---
+    Config: algo_qmix_gnn.yaml
+    Algorithm: qmix, use_gnn: True
+    Training time: 3578.3s | Final avg reward (last 50): -145520.0
+    Eval: fill_rate=0.484 +/- 0.008, cost/step=985.5, bullwhip=0.413
+
+--- Loading config & Training: mappo ---
+    Config: algo_mappo.yaml
+    Algorithm: mappo, use_gnn: False
+    Training time: 421.1s | Final avg reward (last 50): -143526.7
+    Eval: fill_rate=0.659 +/- 0.004, cost/step=1424.8, bullwhip=0.000
+
+--- Loading config & Training: mappo_gnn ---
+    Config: algo_mappo_gnn.yaml
+    Algorithm: mappo, use_gnn: True
+    Training time: 2559.2s | Final avg reward (last 50): -143374.2
+    Eval: fill_rate=0.324 +/- 0.004, cost/step=1051.0, bullwhip=0.588
+
+====================================================================================================
+COMPARISON TABLE (trained)
+====================================================================================================
+
+  Fill Rate (higher=better)
+  Algorithm                   Value        Std
+  ---------------------------------------------
+  BaseStock                   0.350      0.022
+  (s,S)                       0.327      0.009
+  iql                         0.479      0.008
+  iql_gnn                     0.693      0.009
+  qmix                        0.443      0.011
+  qmix_gnn                    0.484      0.008
+  mappo                       0.659      0.004
+  mappo_gnn                   0.324      0.004
+
+  Cost/Step (lower=better)
+  Algorithm                   Value        Std
+  ---------------------------------------------
+  BaseStock                1186.933     52.925
+  (s,S)                    1230.800     55.674
+  iql                       895.767     48.204
+  iql_gnn                   938.947     47.317
+  qmix                      938.220     43.011
+  qmix_gnn                  985.540     48.966
+  mappo                    1424.847     49.750
+  mappo_gnn                1050.953     48.700
+
+  Bullwhip CV (lower=better)
+  Algorithm                   Value        Std
+  ---------------------------------------------
+  BaseStock                   3.002      0.251
+  (s,S)                       3.415      0.344
+  iql                         0.000      0.000
+  iql_gnn                     0.000      0.000
+  qmix                        1.949      0.173
+  qmix_gnn                    0.413      0.129
+  mappo                       0.000      0.000
+  mappo_gnn                   0.588      0.081
+
+  Inv Turnover (moderate=good)
+  Algorithm                   Value        Std
+  ---------------------------------------------
+  BaseStock                  74.877      9.208
+  (s,S)                      73.889      9.873
+  iql                        72.795      4.902
+  iql_gnn                    56.492      7.508
+  qmix                       66.199      5.424
+  qmix_gnn                 2304.786      6.379
+  mappo                      65.213      8.408
+  mappo_gnn                  96.302      6.924
+
+  Total Holding
+  Algorithm                   Value        Std
+  ---------------------------------------------
+  BaseStock                1766.600    128.276
+  (s,S)                    1832.600    136.728
+  iql                      1519.800    130.555
+  iql_gnn                  5683.200    161.680
+  qmix                     1671.000    160.200
+  qmix_gnn                 1945.400    115.122
+  mappo                    9218.000     71.271
+  mappo_gnn                1743.930    108.171
+
+  Total Backlog
+  Algorithm                   Value        Std
+  ---------------------------------------------
+  BaseStock               33841.400   1604.826
+  (s,S)                   35091.400   1761.450
+  iql                     25353.200   1486.376
+  iql_gnn                 22485.200   1482.219
+  qmix                    26475.600   1328.511
+  qmix_gnn                27620.800   1498.813
+  mappo                   33527.400   1513.082
+  mappo_gnn               29784.670   1491.051
+
+====================================================================================================
+HEAD-TO-HEAD: MADRL+GNN vs MADRL
+====================================================================================================
+
+  iql_gnn vs iql:
+    Fill Rate:    GNN=0.693  BASE=0.479  -> GNN
+    Cost/Step:    GNN=938.9  BASE=895.8  -> BASE
+    Bullwhip CV:  GNN=0.000  BASE=0.000  -> BASE
+    OVERALL: BASE WINS (2/3 metrics)
+
+  qmix_gnn vs qmix:
+    Fill Rate:    GNN=0.484  BASE=0.443  -> GNN
+    Cost/Step:    GNN=985.5  BASE=938.2  -> BASE
+    Bullwhip CV:  GNN=0.413  BASE=1.949  -> GNN
+    OVERALL: GNN WINS (2/3 metrics)
+
+  mappo_gnn vs mappo:
+    Fill Rate:    GNN=0.324  BASE=0.659  -> BASE
+    Cost/Step:    GNN=1051.0  BASE=1424.8  -> GNN
+    Bullwhip CV:  GNN=0.588  BASE=0.000  -> BASE
+    OVERALL: BASE WINS (2/3 metrics)
+
+  GNN Wins: 1/3
+  RESULT: MADRL+GNN > MADRL  [NOT YET - 1/3 pairs]

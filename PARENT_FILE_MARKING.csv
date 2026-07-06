@@ -1,0 +1,894 @@
+﻿relative_path,extension,category,label,note
+.codebuddy/plans/MEIRP供应链论文代码_-_详细讨论结果_438fa3d4.md,.md,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.codebuddy/plans/MEIRP供应链论文代码规划_392c616a(未完成).md,.md,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.codebuddy/plans/MEIRP供应链论文代码规划v2_2522da9d(未完成).md,.md,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.idea/.gitignore,,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.idea/codeStyles/codeStyleConfig.xml,.xml,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.idea/inspectionProfiles/profiles_settings.xml,.xml,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.idea/MarsCodeWorkspaceAppSettings.xml,.xml,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.idea/MaSCL.iml,.iml,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.idea/misc.xml,.xml,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.idea/modules.xml,.xml,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.idea/other.xml,.xml,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.idea/vcs.xml,.xml,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.idea/workspace.xml,.xml,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.pytest_cache/.gitignore,,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.pytest_cache/CACHEDIR.TAG,.tag,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.pytest_cache/README.md,.md,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.pytest_cache/v/cache/lastfailed,,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.pytest_cache/v/cache/nodeids,,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.workbuddy/expert-history.json,.json,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.workbuddy/memory/2026-04-27.md,.md,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+.workbuddy/memory/MEMORY.md,.md,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+__pycache__/base_runner.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+__pycache__/config_human.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+__pycache__/LLM_Agent.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+__pycache__/runner_human.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+algorithms/__init__.py,.py,C,legacy_algorithms,Legacy RL/env utility code; not needed for requested IRP baselines
+algorithms/__pycache__/__init__.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+algorithms/__pycache__/actor_critic.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+algorithms/__pycache__/happo_policy.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+algorithms/__pycache__/happo_trainer.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+algorithms/actor_critic.py,.py,C,legacy_algorithms,Legacy RL/env utility code; not needed for requested IRP baselines
+algorithms/happo_policy.py,.py,C,legacy_algorithms,Legacy RL/env utility code; not needed for requested IRP baselines
+algorithms/happo_trainer.py,.py,C,legacy_algorithms,Legacy RL/env utility code; not needed for requested IRP baselines
+algorithms/utils/__pycache__/act.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+algorithms/utils/__pycache__/cnn.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+algorithms/utils/__pycache__/distributions.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+algorithms/utils/__pycache__/mlp.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+algorithms/utils/__pycache__/rnn.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+algorithms/utils/__pycache__/util.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+algorithms/utils/act.py,.py,C,legacy_algorithms,Legacy RL/env utility code; not needed for requested IRP baselines
+algorithms/utils/cnn.py,.py,C,legacy_algorithms,Legacy RL/env utility code; not needed for requested IRP baselines
+algorithms/utils/distributions.py,.py,C,legacy_algorithms,Legacy RL/env utility code; not needed for requested IRP baselines
+algorithms/utils/mlp.py,.py,C,legacy_algorithms,Legacy RL/env utility code; not needed for requested IRP baselines
+algorithms/utils/rnn.py,.py,C,legacy_algorithms,Legacy RL/env utility code; not needed for requested IRP baselines
+algorithms/utils/util.py,.py,C,legacy_algorithms,Legacy RL/env utility code; not needed for requested IRP baselines
+alns_implementation/__pycache__/alns2.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+alns_implementation/alns2.py,.py,A,alns_inventory_metaheuristic,Rolling-window ALNS over order decisions; adapt to current env/routing
+alns_implementation/alns3.py,.py,A,cp_sat_exact_irp,Rolling-horizon OR-Tools CP-SAT with routing arcs; strongest exact IRP reference
+alns_implementation/rolling_window_alns.py,.py,B,alns_early_version,Earlier ALNS; superseded by alns2 but useful for operator comparison
+alns_implementation/visualizations/network_visualization.png,.png,D,generated_or_data_artifact,Generated output/data/checkpoint; not algorithm source
+base_runner.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+combine_images.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+compare_envs.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+config_human.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+configs/best332,,B,old_config,Old YAML scenario/config; adapt values/schema if needed
+configs/config_1layers.yaml,.yaml,B,old_config,Old YAML scenario/config; adapt values/schema if needed
+configs/config_2layers.yaml,.yaml,B,old_config,Old YAML scenario/config; adapt values/schema if needed
+configs/config_3layers.yaml,.yaml,B,old_config,Old YAML scenario/config; adapt values/schema if needed
+configs/config_4layers.yaml,.yaml,B,old_config,Old YAML scenario/config; adapt values/schema if needed
+configs/config_5layers.yaml,.yaml,B,old_config,Old YAML scenario/config; adapt values/schema if needed
+configs/config_fully_connected.yaml,.yaml,B,old_config,Old YAML scenario/config; adapt values/schema if needed
+deprecated/env_wrappers.py,.py,D,legacy_deprecated,Legacy RL/env utility code; not needed for requested IRP baselines
+deprecated/generator.py,.py,D,legacy_deprecated,Legacy RL/env utility code; not needed for requested IRP baselines
+deprecated/ss_policy.py,.py,D,legacy_deprecated,Legacy RL/env utility code; not needed for requested IRP baselines
+envs/__pycache__/cvrp_routing_policy.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/__pycache__/cvrp_solver.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/__pycache__/env_wrappers.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/__pycache__/generator.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/__pycache__/irp_net2.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/__pycache__/network_builder.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/__pycache__/policies.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/__pycache__/serial.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/__pycache__/ss_policy.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/__pycache__/ss_policy_v2.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/D_MEIRP_Solver.py,.py,B,gurobi_exact_reference,Gurobi ILP/MIQP idea with routing variables; old deps/missing imports
+envs/demand/__pycache__/demand_generator.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/demand/__pycache__/generator.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/demand/demand_generator.py,.py,C,legacy_env_code,Legacy environment/support code; inspect only if touching env modeling
+envs/env_wrappers.py,.py,C,legacy_env_code,Legacy environment/support code; inspect only if touching env modeling
+envs/environments/__init__.py,.py,C,legacy_env_code,Legacy environment/support code; inspect only if touching env modeling
+envs/environments/__pycache__/__init__.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/environments/__pycache__/env_wrappers.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/environments/__pycache__/irp_net2_decoupled.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/environments/__pycache__/MILP.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/environments/heuristic/__init__.py,.py,C,legacy_env_code,Legacy environment/support code; inspect only if touching env modeling
+envs/environments/heuristic/__pycache__/__init__.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/environments/heuristic/__pycache__/base_stock_policy.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/environments/heuristic/__pycache__/baseStock.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/environments/heuristic/__pycache__/heuristic_solver.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/environments/heuristic/__pycache__/savings_algorithm.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/environments/heuristic/__pycache__/ss_policy.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/environments/heuristic/baseStock.py,.py,B,inventory_heuristic,Graph BaseStock variants incl demand/service-level target; mostly duplicate
+envs/environments/heuristic/heuristic_solver.py,.py,B,heuristic_comparison_harness,Old combined inventory+routing harness; adapt logic only
+envs/environments/heuristic/savings_algorithm.py,.py,B,routing_heuristic_old,Older savings implementation; reference only after comparing correctness
+envs/environments/heuristic/ss_policy.py,.py,B,inventory_heuristic,"Graph (s,S) variants; mostly duplicate"
+envs/environments/heuristic/visualizations/network_visualization.png,.png,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/environments/irp_net2_decoupled.py,.py,B,old_full_env,"Large old env with routing/MILP/human hooks; mine concepts, do not port wholesale"
+envs/environments/MILP.py,.py,A,cp_sat_exact_irp_duplicate,OR-Tools CP-SAT order+routing model; duplicate/reference for alns3
+envs/environments/t_env.py,.py,C,legacy_env_code,Legacy environment/support code; inspect only if touching env modeling
+envs/environments/tmp_env.py,.py,C,legacy_env_code,Legacy environment/support code; inspect only if touching env modeling
+envs/environments/visualizations/Backlog.png,.png,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/environments/visualizations/combined_visualization.png,.png,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/environments/visualizations/Inventory.png,.png,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/environments/visualizations/network_visualization.png,.png,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/generator.py,.py,C,legacy_env_code,Legacy environment/support code; inspect only if touching env modeling
+envs/network/__init__.py,.py,C,legacy_env_code,Legacy environment/support code; inspect only if touching env modeling
+envs/network/__pycache__/__init__.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/network/__pycache__/cvrp_solver.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/network/__pycache__/network_builder.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/network/cvrp_solver.py,.py,A,routing_heuristic_duplicate,Savings + 2-opt implementation; compare with meirp_madrl version
+envs/network/distribution_plots/annular.png,.png,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/network/distribution_plots/exponential.png,.png,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/network/distribution_plots/normal.png,.png,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/network/distribution_plots/uniform.png,.png,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/network/network_builder.py,.py,A,network_builder_full,"Full topology generator incl fully connected variant, ss params, vehicles"
+envs/policies/__init__.py,.py,C,legacy_env_code,Legacy environment/support code; inspect only if touching env modeling
+envs/policies/__pycache__/__init__.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/policies/__pycache__/cvrp_routing_policy.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/policies/__pycache__/policies.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/policies/__pycache__/ss_policy.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/policies/__pycache__/ss_policy_v2.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+envs/policies/cvrp_routing_policy.py,.py,A,routing_adapter_duplicate,Old CVRP routing policy; useful adapter pattern
+envs/policies/MILP/OrToolsMILP1.py,.py,B,milp_skeleton,"OR-Tools preprocessing/skeleton; incomplete, reference only"
+envs/policies/policies.py,.py,A,policy_interfaces,InventoryPolicy/RoutingPolicy abstractions; useful for baseline interfaces
+envs/policies/ss_policy_v2.py,.py,B,inventory_policy_old,"Old graph SSPolicy; useful semantics, duplicate of current baseline"
+envs/serial.py,.py,C,legacy_env_code,Legacy environment/support code; inspect only if touching env modeling
+envs/test_data/combined_data_plot.png,.png,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/data_visualization.png,.png,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/plot.py,.py,C,legacy_env_code,Legacy environment/support code; inspect only if touching env modeling
+envs/test_data/test_demand_merton/0.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/1.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/10.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/11.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/12.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/13.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/14.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/15.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/16.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/17.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/18.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/19.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/2.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/3.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/4.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/5.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/6.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/7.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/8.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_merton/9.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/0.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/1.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/10.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/11.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/12.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/13.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/14.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/15.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/16.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/17.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/18.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/19.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/2.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/3.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/4.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/5.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/6.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/7.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/8.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/0/9.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/0.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/1.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/10.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/11.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/12.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/13.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/14.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/15.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/16.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/17.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/18.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/19.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/2.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/3.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/4.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/5.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/6.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/7.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/8.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_net/1/9.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/0.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/1.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/10.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/11.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/12.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/13.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/14.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/15.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/16.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/17.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/18.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/19.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/2.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/3.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/4.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/5.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/6.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/7.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/8.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+envs/test_data/test_demand_stationary/9.txt,.txt,C,legacy_env_data,Legacy env data/artifact; low priority
+eval_res/agent/eval_metrics_04_15_22_08.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_16_15_49.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_17_10_20.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_17_10_39.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_17_10_39.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_17_10_59.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_17_10_59.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_18_21_15.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_18_21_15.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_18_21_52.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_18_21_52.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_18_23_18.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_18_23_18.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_13_21.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_13_21.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_13_40.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_13_40.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_15_53.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_15_53.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_01.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_01.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_05.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_05.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_14.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_14.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_36.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_36.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_50.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_50.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_52.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_16_52.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_17_01.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_17_01.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_17_08.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_17_08.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_18_01.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_18_01.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_18_02.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_18_02.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_18_43.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_18_43.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_18_55.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_18_55.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_19_02.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_19_02.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_19_07.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_20_19_07.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_10_16.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_10_16.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_10_20.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_10_22.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_10_22.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_10_25.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_10_25.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_10_29.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_10_29.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_10_37.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_10_37.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_11_07.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_11_07.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_11_08.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_11_08.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_11_40.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_21_11_40.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_27_13_36.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/agent/eval_metrics_04_27_13_36.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_10_59.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_10_59.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_11_04.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_11_04.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_11_18.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_11_18.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_13_55.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_13_55.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_14_01.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_14_01.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_14_01_2.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_14_01_2_max_prob_cnt.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_15_57.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_15_57.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_16_16.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_16_16.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_16_26.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_16_26.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_16_34.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_16_34.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_16_57.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_17_16_57.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_09_23.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_09_23.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_13_36.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_13_36.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_15_55.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_15_55.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_16_19.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_16_19.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_16_21.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_16_21.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_19_12.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_19_12.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_19_22.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_19_22.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_19_35.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_19_35.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_19_42.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_19_42.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_19_58.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_19_58.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_18.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_18.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_19.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_19.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_38.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_38.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_40.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_40.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_43.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_43.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_48.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_48.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_52.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_52.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_57.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_57.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_59.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_20_59.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_06.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_06.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_09.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_09.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_23.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_24.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_24.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_27.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_27.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_32.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_32.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_38.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_38.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_47.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_47.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_52.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_21_52.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_22_00.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_22_00.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_22_06.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_19_22_06.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_09_31.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_09_31.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_09_38.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_09_38.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_09_51.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_09_51.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_10_00.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_10_00.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_10_29.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_10_29.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_10_30.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_10_30.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_10_56.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_10_57.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_10_57.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_11_01.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_11_01.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_11_28.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_11_28.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_12_08.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_12_08.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_20.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_20.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_28.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_28.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_31.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_31.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_35.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_35.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_37.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_37.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_45.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_13_45.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_15_47.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_15_53.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_15_53.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_00.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_00.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_05.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_05.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_14.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_14.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_36.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_36.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_50.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_51.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_52.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_16_52.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_17_01.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_17_01.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_17_08.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_17_08.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_01.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_01.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_02.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_02.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_12.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_12.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_26.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_26.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_28.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_28.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_43.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_43.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_49.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_49.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_55.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_55.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_58.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_18_58.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_19_00.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_19_00.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_19_02.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_19_02.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_19_03.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_19_03.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_19_07.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_20_19_07.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_16.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_16.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_20.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_22.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_22.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_25.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_29.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_29.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_37.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_37.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_39.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_39.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_41.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_41.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_43.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_43.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_45.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_45.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_47.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_47.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_48.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_48.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_57.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_57.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_59.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_10_59.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_05.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_05.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_06.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_06.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_08.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_08.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_14.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_15.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_15.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_24.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_24.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_29.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_29.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_30.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_30.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_32.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_32.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_34.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_34.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_35.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_35.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_40.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+eval_res/human/eval_metrics_04_21_11_40.csvmax_prob_cnt,.csvmax_prob_cnt,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+LLM_Agent.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+meirp_madrl/__pycache__/train_v2.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/algorithms/__init__.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/algorithms/__pycache__/__init__.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/algorithms/__pycache__/iql.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/algorithms/__pycache__/qmix.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/algorithms/__pycache__/vdn.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/algorithms/iql.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/algorithms/qmix.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/algorithms/vdn.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/checkpoints/iql/best.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/iql/ep1000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/iql/ep1500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/iql/ep2000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/iql/ep2500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/iql/ep3000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/iql/ep3500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/iql/ep4000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/iql/ep4500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/iql/ep500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/iql/ep5000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/iql/final.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/best.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/ep1000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/ep1500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/ep2000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/ep2500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/ep3000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/ep3500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/ep4000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/ep4500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/ep500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/ep5000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/qmix/final.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/best.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/ep1000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/ep1500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/ep2000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/ep2500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/ep3000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/ep3500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/ep4000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/ep4500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/ep500.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/ep5000.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/checkpoints/vdn/final.pt,.pt,D,old_rl_checkpoint,Old trained model checkpoint; no baseline algorithm code
+meirp_madrl/configs/config_3layers.yaml,.yaml,D,legacy_madrl_output,Old MADRL artifact/output; no migration priority
+meirp_madrl/diagnose_env.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/env/__init__.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/env/__pycache__/__init__.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/env/__pycache__/cvrp_routing_policy.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/env/__pycache__/cvrp_solver.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/env/__pycache__/demand_generator.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/env/__pycache__/meirp_env.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/env/__pycache__/network_builder.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/env/__pycache__/policies.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/env/cvrp_routing_policy.py,.py,A,routing_adapter,Graph routing policy adapter; port interface idea
+meirp_madrl/env/cvrp_solver.py,.py,A,routing_heuristic,Savings + 2-opt CVRP; best routing heuristic source; port after tests
+meirp_madrl/env/demand_generator.py,.py,A,demand_generator,Poisson/normal/Merton demand generator; reusable with small cleanup
+meirp_madrl/env/meirp_env.py,.py,A,env_routing_blueprint,Clean old env with CVRP routing/transport cost; best environment split blueprint
+meirp_madrl/env/network_builder.py,.py,A,network_builder,"Coordinates, layers, vehicle config; useful for MEIRP routing config"
+meirp_madrl/env/policies.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/eval_compare.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/eval_detail.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/eval_detail_output.txt,.txt,D,legacy_madrl_output,Old MADRL artifact/output; no migration priority
+meirp_madrl/qmix/__init__.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/qmix/__pycache__/__init__.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/qmix/__pycache__/qmix_agent.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+meirp_madrl/qmix/qmix_agent.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/test_env.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/train_madrl.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/train_qmix.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/train_v2.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_madrl/verify_env.py,.py,C,legacy_madrl_training,Old MADRL/eval script; useful only as historical RL reference
+meirp_project/.claude/settings.json,.json,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/.claude/settings.local.json,.json,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/.gitignore,,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/.idea/.gitignore,,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/.idea/meirp_project.iml,.iml,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/.idea/misc.xml,.xml,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/.idea/modules.xml,.xml,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/.idea/vcs.xml,.xml,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/.idea/workspace.xml,.xml,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/.pytest_cache/.gitignore,,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/.pytest_cache/CACHEDIR.TAG,.tag,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/.pytest_cache/README.md,.md,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/.pytest_cache/v/cache/lastfailed,,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/.pytest_cache/v/cache/nodeids,,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/.vscode/settings.json,.json,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/Agents.md,.md,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/__pycache__/base.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/__pycache__/registry.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/base.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/iql/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/iql/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/iql/__pycache__/agent.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/iql/__pycache__/buffer.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/iql/agent.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/iql/buffer.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/mappo/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/mappo/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/mappo/__pycache__/agent.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/mappo/__pycache__/buffer.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/mappo/agent.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/mappo/buffer.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/qmix/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/qmix/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/qmix/__pycache__/agent.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/qmix/__pycache__/mixer.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/algorithms/qmix/agent.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/qmix/mixer.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/algorithms/registry.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/archive/obsolete_results/bugfix_2L.log,.log,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/bugfix_3L.log,.log,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/comparison_all.txt,.txt,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/encoder_2L.log,.log,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/encoder_3L.log,.log,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/full_compare_2layers.json,.json,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/full_compare_3layers.json,.json,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/full_compare_4layers.json,.json,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/full_compare_custom.json,.json,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/madrl_tuning_report.md,.md,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/milp_oracle_test.json,.json,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/README.md,.md,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/run_2L_poisson.log,.log,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/run_3L_normal.log,.log,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/run_3L_poisson.log,.log,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/run_3L_seasonal.log,.log,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/sea_fast_2layers.json,.json,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/sea_fast_3layers.json,.json,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/sea_fast_4layers.json,.json,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/test_3L.log,.log,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/test_4L.log,.log,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/train_compare.txt,.txt,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_results/validate_sea_v2.json,.json,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/analyze_env.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/compare_all.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/comprehensive_experiment.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/eval_utils.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/full_experiment.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/generate_expert.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/plot_results.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/quick_compare.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/README.md,.md,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/run_ablation.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/run_all_scenarios.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/run_full_comparison.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/test_milp_scenarios.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/train_and_compare.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/tune_iql.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/tune_mappo.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/tune_qmix.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/validate_sea.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/validate_sea_fast.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/validate_sea_v2.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_scripts/verify_milp_oracle.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_unused/algorithms/iql/trainer.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_unused/algorithms/mappo/trainer.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_unused/algorithms/qmix/buffer.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_unused/algorithms/qmix/trainer.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_unused/README.md,.md,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_unused/solvers/alns_solver.py,.py,A,alns_inventory_metaheuristic_current,Archived current-style ALNS over order quantities; easier than old graph ALNS
+meirp_project/archive/obsolete_unused/solvers/base.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/archive/obsolete_unused/solvers/cp_sat_solver.py,.py,A,cp_sat_inventory_oracle,Archived CP-SAT oracle for orders/allocation; no routing but current schema
+meirp_project/archive/obsolete_unused/solvers/ga_solver.py,.py,A,ga_inventory_metaheuristic,Archived GA over order quantities; revive for metaheuristic inventory baseline
+meirp_project/archive/obsolete_unused/solvers/MILP.py,.py,C,current_project_archive,Already archived in current project; use only if explicitly revived
+meirp_project/baselines/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/baselines/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/baselines/__pycache__/base.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/baselines/__pycache__/base_stock.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/baselines/__pycache__/ss_policy.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/baselines/base.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/baselines/base_stock.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/baselines/ss_policy.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/collaboration/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/collaboration/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/collaboration/__pycache__/advisor.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/collaboration/__pycache__/base.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/collaboration/__pycache__/budget.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/collaboration/__pycache__/escalation.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/collaboration/__pycache__/milp_advisor.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/collaboration/__pycache__/sea_wrapper.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/collaboration/advisor.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/collaboration/base.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/collaboration/budget.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/collaboration/escalation.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/collaboration/milp_advisor.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/collaboration/sea_wrapper.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/algo_iql.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/algo_iql_gnn.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/algo_mappo.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/algo_mappo_gnn.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/algo_qmix.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/algo_qmix_gnn.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/env_2layers.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/env_2layers_hard.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/env_3layers.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/env_3layers_hard.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/env_3layers_normal.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/env_3layers_seasonal.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/env_3layers_shock.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/env_3layers_trend.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/env_4layers.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/env_4layers_hard.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/configs/experiment.yaml,.yaml,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/core/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/core/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/core/__pycache__/allocation.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/core/__pycache__/config.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/core/__pycache__/demand.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/core/__pycache__/env.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/core/__pycache__/health_monitor.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/core/__pycache__/network.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/core/__pycache__/reward.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/core/allocation.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/core/config.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/core/demand.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/core/env.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/core/health_monitor.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/core/network.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/core/reward.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/evaluation/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/evaluation/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/evaluation/__pycache__/ablation.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/evaluation/__pycache__/metrics.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/evaluation/__pycache__/runner.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/evaluation/__pycache__/visualization.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/evaluation/ablation.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/evaluation/metrics.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/evaluation/runner.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/evaluation/statistics.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/evaluation/visualization.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/models/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/models/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/models/__pycache__/encoders.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/models/__pycache__/gat_encoder.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/models/__pycache__/gru_encoder.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/models/__pycache__/mlp_encoder.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/models/encoders.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/models/gat_encoder.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/models/gru_encoder.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/models/mlp_encoder.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/PARENT_CODE_AUDIT.md,.md,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/PARENT_FILE_MARKING.csv,.csv,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/problems/problems_.txt,.txt,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/results/README.md,.md,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/scripts/__pycache__/full_compare.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/scripts/__pycache__/train_and_compare.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/scripts/__pycache__/tune_qmix.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/scripts/evaluate.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/scripts/full_compare.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/scripts/train.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/solvers/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/solvers/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/solvers/__pycache__/alns_solver.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/solvers/__pycache__/cp_sat_solver.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/solvers/__pycache__/ga_solver.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/solvers/__pycache__/milp_solver.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/solvers/milp_solver.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/__init__.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/__pycache__/__init__.cpython-39.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/tests/__pycache__/test_bdq.cpython-39-pytest-8.4.2.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/tests/__pycache__/test_core.cpython-39-pytest-8.4.2.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/tests/__pycache__/test_integration.cpython-39-pytest-8.4.2.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/tests/__pycache__/test_mappo.cpython-39-pytest-8.4.2.pyc,.pyc,D,current_project_generated_or_tooling,Generated/tool/cache in current project; not algorithm source
+meirp_project/tests/run_all_tests.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/run_core_tests.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/test_baselines.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/test_bdq.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/test_core.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/test_encoders.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/test_evaluation.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/test_integration.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/test_iql.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/test_mappo.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/test_qmix.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+meirp_project/tests/test_sea.py,.py,E,current_project_active,"Current MEIRP project file; integration target, not parent candidate"
+origin/env_wrappers.py,.py,C,legacy_origin,Legacy RL/env utility code; not needed for requested IRP baselines
+origin/serial.py,.py,C,legacy_origin,Legacy RL/env utility code; not needed for requested IRP baselines
+project_desc.md,.md,B,architecture_doc,Old architecture description; useful for mapping modules
+prompt.md,.md,B,requirements_doc,Old requested solver structure; useful as design intent
+results/algorithm_comparison.json,.json,B,old_result_snapshot,Historical algorithm comparison results; not current benchmark
+results/backlog_comparison.png,.png,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+results/backlog_comparison_all.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+results/backlog_comparison_all.png,.png,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+results/backlog_echarts,,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+results/heuristic_comparison.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+results/inventory_backlog_orders.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+results/inventory_comparison.png,.png,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+results/inventory_comparison_all.csv,.csv,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+results/inventory_comparison_all.png,.png,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+runner_human.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+test_algorithm_comparison.py,.py,B,old_experiment_harness,Old sS/BaseStock/TwoStage/ALNS comparison harness; adapt experiments
+test_data/combined_data_plot.png,.png,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/data_visualization.png,.png,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/plot.py,.py,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/0.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/1.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/10.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/11.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/12.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/13.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/14.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/15.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/16.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/17.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/18.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/19.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/2.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/3.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/4.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/5.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/6.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/7.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/8.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_merton/9.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/0.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/1.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/10.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/11.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/12.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/13.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/14.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/15.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/16.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/17.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/18.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/19.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/2.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/3.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/4.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/5.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/6.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/7.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/8.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/0/9.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/0.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/1.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/10.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/11.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/12.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/13.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/14.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/15.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/16.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/17.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/18.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/19.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/2.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/3.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/4.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/5.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/6.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/7.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/8.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_net/1/9.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/0.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/1.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/10.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/11.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/12.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/13.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/14.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/15.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/16.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/17.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/18.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/19.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/2.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/3.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/4.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/5.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/6.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/7.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/8.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_data/test_demand_stationary/9.txt,.txt,C,historical_demand_data,Historical demand/eval data; useful only for reproducing old experiments
+test_ebs_policy.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+test_fully_connected_network.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+test_heuristic.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+test_heuristic_comparison.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+test_utils/comparison_plot.png,.png,D,generated_or_data_artifact,Generated output/data/checkpoint; not algorithm source
+test_utils/file_1_plot.png,.png,D,generated_or_data_artifact,Generated output/data/checkpoint; not algorithm source
+test_utils/file_2_plot.png,.png,D,generated_or_data_artifact,Generated output/data/checkpoint; not algorithm source
+test_utils/plot_demand.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+test_utils/rate.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+train_env_agent.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+train_env_human.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only
+two_stage_algorithm/__pycache__/two_stage_algorithm.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+two_stage_algorithm/results/inventory_backlog_orders.csv,.csv,D,generated_or_data_artifact,Generated output/data/checkpoint; not algorithm source
+two_stage_algorithm/two_stage_algorithm.py,.py,B,two_stage_exact_inventory_plus_savings,OR-Tools inventory + savings routing idea; route section partly commented/hardcoded
+two_stage_algorithm/visualizations/network_visualization.png,.png,D,generated_or_data_artifact,Generated output/data/checkpoint; not algorithm source
+utils/__init__.py,.py,C,legacy_utils,Legacy RL/env utility code; not needed for requested IRP baselines
+utils/__pycache__/__init__.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+utils/__pycache__/popart.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+utils/__pycache__/separated_buffer.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+utils/__pycache__/util.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+utils/__pycache__/valuenorm.cpython-39.pyc,.pyc,D,tooling_cache_metadata,IDE/cache/tool metadata; no MEIRP algorithm value
+utils/multi_discrete.py,.py,C,legacy_utils,Legacy RL/env utility code; not needed for requested IRP baselines
+utils/plot_log.py,.py,C,legacy_utils,Legacy RL/env utility code; not needed for requested IRP baselines
+utils/popart.py,.py,C,legacy_utils,Legacy RL/env utility code; not needed for requested IRP baselines
+utils/separated_buffer.py,.py,C,legacy_utils,Legacy RL/env utility code; not needed for requested IRP baselines
+utils/util.py,.py,C,legacy_utils,Legacy RL/env utility code; not needed for requested IRP baselines
+utils/valuenorm.py,.py,C,legacy_utils,Legacy RL/env utility code; not needed for requested IRP baselines
+visualizations/demand_distributions.png,.png,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+visualizations/network_visualization.png,.png,D,experiment_output,Historical experiment output/figures/checkpoints; do not migrate as code
+visualize_demand_distributions.py,.py,C,legacy_python,Python source not directly matching requested IRP baseline set; reference only

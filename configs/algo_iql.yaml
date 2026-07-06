@@ -1,0 +1,22 @@
+# IQL Algorithm Configuration
+algorithm: iql
+
+# Network
+hidden_dim: 128
+
+# Training
+lr: 0.001
+gamma: 0.99
+epsilon_start: 1.0
+epsilon_end: 0.05
+epsilon_decay: 5000
+
+# Replay buffer
+buffer_capacity: 50000
+batch_size: 64
+
+# Target network
+target_update_freq: 200
+
+# GNN encoder
+use_gnn: false
