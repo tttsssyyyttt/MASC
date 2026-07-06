@@ -14,6 +14,8 @@ def compute_reward(
     alpha: float,
     stockout_penalty: float = 0.0,
     fill_rate_bonus: float = 0.0,
+    order_penalty: float = 0.0,
+    order_qty=None,
     fulfilled_demand=None,
 ) -> tuple:
     """Compute mixed reward for all nodes with optional stockout shaping.
@@ -56,6 +58,10 @@ def compute_reward(
     # Fill rate bonus: reward for each unit of demand fulfilled
     if fill_rate_bonus > 0:
         r_local = r_local + fill_rate_bonus * fulfilled
+
+    if order_penalty > 0 and order_qty is not None:
+        orders = np.maximum(np.asarray(order_qty, dtype=np.float64), 0.0)
+        r_local = r_local - order_penalty * orders
 
     # Use MEAN instead of SUM for global reward — avoids scaling with N agents
     r_global = np.full(len(inventory), r_local.mean())

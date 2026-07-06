@@ -771,9 +771,9 @@ def run_compare(args):
 
     # ===== RL algorithms =====
     rl_configs = [
-        ("QMIX", "qmix", False, dict(hidden_dim=128, lr=1e-4, gamma=0.99, buffer_capacity=20000, batch_size=64, target_update_freq=100, mixer_hidden=32)),
+        ("QMIX", "qmix", False, dict(hidden_dim=128, lr=5e-5, gamma=0.95, buffer_capacity=20000, batch_size=64, target_update_freq=500, mixer_hidden=32)),
         ("IQL", "iql", False, dict(hidden_dim=128, lr=5e-4, gamma=0.99, buffer_capacity=20000, batch_size=64, epsilon_decay=30000, target_update_freq=200, encoder_update_freq=8)),
-        ("MAPPO", "mappo", False, dict(hidden_dim=128, lr_actor=3e-4, lr_critic=1e-3, gamma=0.99, entropy_coef=0.01)),
+        # ("MAPPO", "mappo", False, dict(hidden_dim=128, lr_actor=3e-4, lr_critic=1e-3, gamma=0.99, entropy_coef=0.01)),
     ]
     if args.include_gnn_rl:
         rl_configs.extend([

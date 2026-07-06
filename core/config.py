@@ -62,6 +62,8 @@ class EnvConfig:
     # --- Random seed ---
     seed: int = 42
 
+    order_penalty: float = 0.0
+
     def __post_init__(self):
         """Validate configuration consistency."""
         n = self.num_nodes
@@ -158,4 +160,5 @@ def from_yaml(path: str) -> EnvConfig:
         routing_method=raw.get("routing_method", "savings"),
         routing_use_2opt=raw.get("routing_use_2opt", True),
         seed=raw.get("seed", 42),
+        order_penalty=raw.get("order_penalty", 0.0)
     )

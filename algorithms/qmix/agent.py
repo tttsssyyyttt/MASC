@@ -312,12 +312,13 @@ class QMIXAgent(MADRLAgent):
         dones_t = torch.FloatTensor(batch["dones"][:, 0]).to(self.device)
 
         targets = rewards_t.unsqueeze(1) + self.gamma * q_tot_next * (1 - dones_t.unsqueeze(1))
+        targets = targets.clamp(-20.0, 20.0)
         # qmix_loss = nn.functional.mse_loss(q_tot, targets.detach())
         qmix_loss = nn.functional.smooth_l1_loss(q_tot, targets.detach())
 
         self.optimizer.zero_grad()
         qmix_loss.backward()
-        nn.utils.clip_grad_norm_(self.optimizer.param_groups[0]['params'], 10)
+        nn.utils.clip_grad_norm_(self.optimizer.param_groups[0]['params'], 1)
         self.optimizer.step()
 
         if self.total_steps % self.target_update_freq == 0:

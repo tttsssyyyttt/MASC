@@ -270,7 +270,7 @@ class MEIRPEnv(gym.Env):
         self.order_hist[:, :-1] = self.order_hist[:, 1:]
         self.order_hist[:, -1] = order_qty
 
-    def _compute_rewards(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    def _compute_rewards(self, order_qty: np.ndarray) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """Compute scaled rewards and cost components."""
         cfg = self.cfg
         rewards, holding_costs, backlog_costs = compute_reward(
@@ -278,6 +278,8 @@ class MEIRPEnv(gym.Env):
             self.H_arr, self.B_arr, cfg.alpha,
             stockout_penalty=cfg.stockout_penalty,
             fill_rate_bonus=cfg.fill_rate_bonus,
+            order_penalty=cfg.order_penalty,
+            order_qty=order_qty,
             fulfilled_demand=self.fulfilled_demand,
         )
         return rewards * cfg.reward_scale, holding_costs, backlog_costs
@@ -389,7 +391,7 @@ class MEIRPEnv(gym.Env):
         self._advance_pipeline(shipment_to)
         self._record_history(order_qty)
 
-        rewards, holding_costs, backlog_costs = self._compute_rewards()
+        rewards, holding_costs, backlog_costs = self._compute_rewards(order_qty)
         rewards = self._apply_transport_reward(rewards, transport_costs)
         fill_rates = self._compute_fill_rates()
 
