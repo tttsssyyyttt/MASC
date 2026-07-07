@@ -333,7 +333,10 @@ class QMIXAgent(MADRLAgent):
         clip_low = (targets_raw < -100.0).float().mean().item()
         targets = targets_raw.clamp(-100.0, 100.0)
         # qmix_loss = nn.functional.mse_loss(q_tot, targets.detach())
-        qmix_loss = nn.functional.smooth_l1_loss(q_tot, targets.detach())
+        # qmix_loss = nn.functional.smooth_l1_loss(q_tot, targets.detach())
+        td_loss = nn.functional.smooth_l1_loss(q_tot, targets.detach())
+        q_reg = 1e-4 * (q_tot ** 2).mean()
+        qmix_loss = td_loss + q_reg
 
         self.optimizer.zero_grad()
         qmix_loss.backward()
@@ -357,6 +360,8 @@ class QMIXAgent(MADRLAgent):
             "target_clip_low": clip_low,
             "q_tot_mean": q_tot.mean().item(),
             "q_next_mean": q_tot_next.mean().item(),
+            "td_loss": td_loss.item(),
+            "q_reg": q_reg.item(),
         }
 
     def save(self, path: str):
