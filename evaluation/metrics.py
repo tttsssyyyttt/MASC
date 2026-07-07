@@ -38,10 +38,28 @@ def compute_metrics(info_history: List[dict], cfg=None) -> dict:
     n_agents = info_history[0]["holding_costs"].shape[0]
 
     # Fill rates
+    # fill_rates = np.array([info["fill_rates"] for info in info_history])  # (T, N)
+    # avg_fill_rate = fill_rates.mean()
+    #
+    # min_fill_rate = fill_rates.min()
+    # per_agent_fill_rate = fill_rates.mean(axis=0)  # (N,)
+    #
+    # orders = np.array([info["order_qty"] for info in info_history])  # (T, N)
+    # demands = np.array([info["demand"] for info in info_history])  # legacy inventory demand
+    # requested_demands = np.array([
+    #     info.get("downstream_order_demand", info["demand"]) for info in info_history
+    # ])
+    # shipped_demands = np.array([
+    #     info.get("shipped_demand", info["demand"]) for info in info_history
+    # ])
+    # external_demands = np.array([
+    #     info.get("external_demand", np.zeros(n_agents)) for info in info_history
+    # ])
+    # fulfilled_demands = np.array([
+    #     info.get("fulfilled_demand", info["demand"]) for info in info_history
+    # ])
+    # Fill rates
     fill_rates = np.array([info["fill_rates"] for info in info_history])  # (T, N)
-    avg_fill_rate = fill_rates.mean()
-    min_fill_rate = fill_rates.min()
-    per_agent_fill_rate = fill_rates.mean(axis=0)  # (N,)
 
     orders = np.array([info["order_qty"] for info in info_history])  # (T, N)
     demands = np.array([info["demand"] for info in info_history])  # legacy inventory demand
@@ -57,6 +75,30 @@ def compute_metrics(info_history: List[dict], cfg=None) -> dict:
     fulfilled_demands = np.array([
         info.get("fulfilled_demand", info["demand"]) for info in info_history
     ])
+
+    # MEIRP demand-weighted installation fill rate:
+    # - terminal layer serves external customer demand
+    # - upstream/intermediate layers serve downstream replenishment demand
+    service_demands = requested_demands.copy()
+    if cfg is not None and hasattr(cfg, "layers"):
+        layers = np.asarray(cfg.layers)
+        terminal_mask = layers == layers.max()
+        service_demands[:, terminal_mask] = external_demands[:, terminal_mask]
+
+    fulfilled_for_service = np.minimum(fulfilled_demands, service_demands)
+
+    total_service_demand = service_demands.sum()
+    total_fulfilled = fulfilled_for_service.sum()
+    avg_fill_rate = float(total_fulfilled / max(total_service_demand, 1e-9))
+
+    per_node_service_demand = service_demands.sum(axis=0)
+    per_node_fulfilled = fulfilled_for_service.sum(axis=0)
+    per_agent_fill_rate = np.divide(
+        per_node_fulfilled,
+        np.maximum(per_node_service_demand, 1e-9),
+    )
+
+    min_fill_rate = float(per_agent_fill_rate.min())
 
     per_node_order_mean = orders.mean(axis=0)
     per_node_order_std = orders.std(axis=0)

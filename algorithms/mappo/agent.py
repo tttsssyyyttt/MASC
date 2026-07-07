@@ -50,16 +50,15 @@ class BranchingActor(nn.Module):
 
 
 class Critic(nn.Module):
-    """Critic taking per-agent features."""
-
-    def __init__(self, input_dim: int, hidden_dim: int = 128):
+    """Centralized critic taking the joint encoded state and outputting per-agent values."""
+    def __init__(self, input_dim: int, hidden_dim: int = 128, output_dim: int = 1):
         super().__init__()
         self.net = nn.Sequential(
             nn.Linear(input_dim, hidden_dim),
             nn.ReLU(),
             nn.Linear(hidden_dim, hidden_dim),
             nn.ReLU(),
-            nn.Linear(hidden_dim, 1),
+            nn.Linear(hidden_dim, output_dim),
         )
 
     def forward(self, state: torch.Tensor) -> torch.Tensor:
@@ -118,6 +117,7 @@ class MAPPOAgent(MADRLAgent):
             lead_time=cfg.lead_time,
         ).to(self.device)
         self.feature_dim = hidden_dim
+        self.critic_state_dim = self.n * self.feature_dim
 
         # Branching actors
         self.actors = nn.ModuleList([
@@ -126,7 +126,7 @@ class MAPPOAgent(MADRLAgent):
         ])
 
         # Critic
-        self.critic = Critic(self.feature_dim, hidden_dim).to(self.device)
+        self.critic = Critic(self.critic_state_dim, hidden_dim, output_dim=self.n).to(self.device)
 
         self.actor_optimizer = optim.Adam(
             list(self.actors.parameters()) + list(self.encoder.parameters()),
@@ -158,11 +158,15 @@ class MAPPOAgent(MADRLAgent):
         self._last_raw_obs = obs.copy()
 
         # Compute values
-        for i in range(self.n):
-            enc_t = torch.FloatTensor(encoded[i]).unsqueeze(0).to(self.device)
-            with torch.no_grad():
-                v = self.critic(enc_t).squeeze().cpu().numpy()
-                values[i] = v
+
+        # for i in range(self.n):
+        #     enc_t = torch.FloatTensor(encoded[i]).unsqueeze(0).to(self.device)
+        #     with torch.no_grad():
+        #         v = self.critic(enc_t).squeeze().cpu().numpy()
+        #         values[i] = v
+        state_t = torch.FloatTensor(encoded.reshape(1, -1)).to(self.device)
+        with torch.no_grad():
+            values = self.critic(state_t).squeeze(0).cpu().numpy()
 
         # Compute actions and log_probs
         for i in range(self.n):
@@ -298,6 +302,7 @@ class MAPPOAgent(MADRLAgent):
                 B = obs_context_b.size(0)
                 encoded_all = self._encode_obs_tensor(obs_context_b)
                 obs_b = encoded_all[torch.arange(B, device=self.device), agent_indices]
+                state_b = encoded_all.reshape(B, -1)
 
                 # Move branch actions to device
                 for key in actions_q_per_branch:
@@ -312,7 +317,9 @@ class MAPPOAgent(MADRLAgent):
                 surr2 = torch.clamp(ratio, 1 - self.clip_epsilon, 1 + self.clip_epsilon) * advantages_b
                 policy_loss = -torch.min(surr1, surr2).mean() - self.entropy_coef * entropy_sum / self.n
 
-                values_pred = self.critic(obs_b).squeeze()
+                values_all = self.critic(state_b)
+                # values_pred = self.critic(obs_b).squeeze()
+                values_pred = values_all.gather(1, agent_indices.unsqueeze(1)).squeeze(1)
                 value_loss = nn.functional.mse_loss(values_pred, returns_b)
 
                 loss = policy_loss + self.value_loss_coef * value_loss

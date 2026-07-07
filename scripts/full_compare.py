@@ -761,39 +761,34 @@ def run_compare(args):
     if not args.skip_milp:
         baseline_specs.append(("MILP-InventoryOnly", cfg, MILPAdvisor(cfg, planning_horizon=15), False, True))
 
-    if not args.skip_baselines:
-        for name, eval_cfg, policy, base, oracle in baseline_specs:
-            t0 = time.time()
-            is_base_flag = "milp" if oracle else base
-            r, raw = eval_policy(
-                policy,
-                eval_cfg,
-                n_seeds=args.eval_seeds,
-                is_base=is_base_flag,
-                oracle_demand=oracle,
-                return_raw=True,
-            )
-            _annotate_cost_metrics(r, eval_cfg, name)
-            for raw_metric in raw:
-                _annotate_cost_metrics(raw_metric, eval_cfg, name)
-            runtimes[name] = time.time() - t0
-            results[name] = r
-            raw_results[name] = raw
-            order.append(name)
-            route = r.get("avg_route_distance_per_step", 0.0)
-            print(f"  {name:<28}: cost={r['avg_cost_per_step']:.1f} fill={r['avg_fill_rate']:.4f} bw={r['avg_bullwhip_cv']:.4f} route={route:.2f}")
+    for name, eval_cfg, policy, base, oracle in baseline_specs:
+        t0 = time.time()
+        is_base_flag = "milp" if oracle else base
+        r, raw = eval_policy(
+            policy,
+            eval_cfg,
+            n_seeds=args.eval_seeds,
+            is_base=is_base_flag,
+            oracle_demand=oracle,
+            return_raw=True,
+        )
+        _annotate_cost_metrics(r, eval_cfg, name)
+        for raw_metric in raw:
+            _annotate_cost_metrics(raw_metric, eval_cfg, name)
+        runtimes[name] = time.time() - t0
+        results[name] = r
+        raw_results[name] = raw
+        order.append(name)
+        route = r.get("avg_route_distance_per_step", 0.0)
+        print(f"  {name:<28}: cost={r['avg_cost_per_step']:.1f} fill={r['avg_fill_rate']:.4f} bw={r['avg_bullwhip_cv']:.4f} route={route:.2f}")
 
     # ===== RL algorithms =====
     rl_configs = [
-        ("QMIX", "qmix", False, dict(hidden_dim=128, lr=5e-5, gamma=0.95, buffer_capacity=20000, batch_size=64, target_update_freq=500, mixer_hidden=32)),
-        ("IQL", "iql", False, dict(hidden_dim=128, lr=5e-4, gamma=0.99, buffer_capacity=20000, batch_size=64, epsilon_decay=30000, target_update_freq=200, encoder_update_freq=8)),
         ("MAPPO", "mappo", False, dict(hidden_dim=128, lr_actor=3e-4, lr_critic=1e-3, gamma=0.99, entropy_coef=0.01)),
+        ("QMIX", "qmix", False, dict(hidden_dim=128, lr=5e-5, gamma=0.95, buffer_capacity=20000, batch_size=64, target_update_freq=500, mixer_hidden=32)),
+        # ("IQL", "iql", False, dict(hidden_dim=128, lr=5e-4, gamma=0.99, buffer_capacity=20000, batch_size=64, epsilon_decay=30000, target_update_freq=200, encoder_update_freq=8)),
     ]
-    if args.rl and args.rl != "all":
-        rl_configs = [
-            item for item in rl_configs
-            if item[1] == args.rl
-        ]
+
     if args.skip_rl:
         rl_configs = []
     if args.include_gnn_rl:
