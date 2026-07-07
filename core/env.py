@@ -273,16 +273,37 @@ class MEIRPEnv(gym.Env):
     def _compute_rewards(self, order_qty: np.ndarray) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """Compute scaled rewards and cost components."""
         cfg = self.cfg
+        # rewards, holding_costs, backlog_costs = compute_reward(
+        #     self.inventory, self.backlog, self.demand,
+        #     self.H_arr, self.B_arr, cfg.alpha,
+        #     stockout_penalty=cfg.stockout_penalty,
+        #     fill_rate_bonus=cfg.fill_rate_bonus,
+        #     order_penalty=cfg.order_penalty,
+        #     service_level_target=cfg.service_level_target,
+        #     service_level_penalty=cfg.service_level_penalty,
+        #     order_qty=order_qty,
+        #     fulfilled_demand=self.fulfilled_demand,
+        # )
+        service_demand = self.downstream_order_demand.copy()
+        for t in self.terminals:
+            service_demand[t] = self.external_demand[t]
+
+        service_fulfilled = np.minimum(self.fulfilled_demand, service_demand)
+
         rewards, holding_costs, backlog_costs = compute_reward(
-            self.inventory, self.backlog, self.demand,
-            self.H_arr, self.B_arr, cfg.alpha,
+            self.inventory,
+            self.backlog,
+            service_demand,
+            self.H_arr,
+            self.B_arr,
+            cfg.alpha,
             stockout_penalty=cfg.stockout_penalty,
             fill_rate_bonus=cfg.fill_rate_bonus,
             order_penalty=cfg.order_penalty,
             service_level_target=cfg.service_level_target,
             service_level_penalty=cfg.service_level_penalty,
             order_qty=order_qty,
-            fulfilled_demand=self.fulfilled_demand,
+            fulfilled_demand=service_fulfilled,
         )
         return rewards * cfg.reward_scale, holding_costs, backlog_costs
 

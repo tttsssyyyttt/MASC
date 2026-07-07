@@ -582,6 +582,18 @@ def write_summary_csv(path, order, results, runtimes):
         "avg_route_distance_per_step",
         "routing_feasible_rate",
         "runtime_sec",
+        "layer_0_fill_rate",
+        "layer_0_holding",
+        "layer_0_backlog",
+        "layer_0_cost_per_step",
+        "layer_1_fill_rate",
+        "layer_1_holding",
+        "layer_1_backlog",
+        "layer_1_cost_per_step",
+        "layer_2_fill_rate",
+        "layer_2_holding",
+        "layer_2_backlog",
+        "layer_2_cost_per_step",
     ]
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fields)
