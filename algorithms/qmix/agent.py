@@ -312,6 +312,8 @@ class QMIXAgent(MADRLAgent):
         dones_t = torch.FloatTensor(batch["dones"][:, 0]).to(self.device)
 
         targets = rewards_t.unsqueeze(1) + self.gamma * q_tot_next * (1 - dones_t.unsqueeze(1))
+        clip_high = (targets > 20.0).float().mean().item()
+        clip_low = (targets < -20.0).float().mean().item()
         targets = targets.clamp(-20.0, 20.0)
         # qmix_loss = nn.functional.mse_loss(q_tot, targets.detach())
         qmix_loss = nn.functional.smooth_l1_loss(q_tot, targets.detach())
@@ -326,7 +328,17 @@ class QMIXAgent(MADRLAgent):
                 self.target_q_nets[i].load_state_dict(self.q_nets[i].state_dict())
             self.target_mixer.load_state_dict(self.mixer.state_dict())
 
-        return {"loss": qmix_loss.item()}
+        return {
+            "loss": qmix_loss.item(),
+            "reward_mean": rewards_t.mean().item(),
+            "reward_std": rewards_t.std().item(),
+            "target_mean": targets.mean().item(),
+            "target_std": targets.std().item(),
+            "target_clip_high": clip_high,
+            "target_clip_low": clip_low,
+            "q_tot_mean": q_tot.mean().item(),
+            "q_next_mean": q_tot_next.mean().item(),
+        }
 
     def save(self, path: str):
         state = {

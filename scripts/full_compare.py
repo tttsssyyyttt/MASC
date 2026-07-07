@@ -434,6 +434,17 @@ def train_rl(
         for key in ("loss", "policy_loss", "value_loss", "entropy"):
             train_row[key] = _safe_float(mean_updates.get(key, ""))
         for key in (
+                "reward_mean",
+                "reward_std",
+                "target_mean",
+                "target_std",
+                "target_clip_high",
+                "target_clip_low",
+                "q_tot_mean",
+                "q_next_mean",
+        ):
+            train_row[key] = _safe_float(mean_updates.get(key, ""))
+        for key in (
                 "avg_cost_per_step",
                 "weighted_total_cost",
                 "avg_weighted_total_cost_per_step",
@@ -784,7 +795,7 @@ def run_compare(args):
 
     # ===== RL algorithms =====
     rl_configs = [
-        ("MAPPO", "mappo", False, dict(hidden_dim=128, lr_actor=3e-4, lr_critic=1e-3, gamma=0.99, entropy_coef=0.01)),
+        # ("MAPPO", "mappo", False, dict(hidden_dim=128, lr_actor=3e-4, lr_critic=1e-3, gamma=0.99, entropy_coef=0.01)),
         ("QMIX", "qmix", False, dict(hidden_dim=128, lr=5e-5, gamma=0.95, buffer_capacity=20000, batch_size=64, target_update_freq=500, mixer_hidden=32)),
         # ("IQL", "iql", False, dict(hidden_dim=128, lr=5e-4, gamma=0.99, buffer_capacity=20000, batch_size=64, epsilon_decay=30000, target_update_freq=200, encoder_update_freq=8)),
     ]
