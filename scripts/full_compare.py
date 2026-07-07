@@ -442,6 +442,8 @@ def train_rl(
                 "target_clip_low",
                 "q_tot_mean",
                 "q_next_mean",
+                "target_raw_mean",
+                "target_raw_std",
         ):
             train_row[key] = _safe_float(mean_updates.get(key, ""))
         for key in (
