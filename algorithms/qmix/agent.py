@@ -265,48 +265,65 @@ class QMIXAgent(MADRLAgent):
 
         # QMIX update: sum per-agent chosen Q across branches, then mix
         q_chosen_list = []
-        q_next_max_list = []
+        q_next_list = []
 
         for i in range(self.n):
             obs_i = encoded_obs[:, i, :]
             next_obs_i = encoded_next[:, i, :]
-            # Current Q-values
+
+            # Current Q-values for the executed action.
             q_branches = self.q_nets[i](obs_i)
 
-            # Target Q-values
+            # Double-Q target:
+            # online network selects the next action;
+            # target network evaluates that selected next action.
             with torch.no_grad():
+                online_next_q_branches = self.q_nets[i](next_obs_i)
                 target_q_branches = self.target_q_nets[i](next_obs_i)
 
-            # Sum Q-values across branches for QMIX input
             q_chosen_sum = torch.zeros(B, device=self.device)
-            q_next_max_sum = torch.zeros(B, device=self.device)
+            q_next_sum = torch.zeros(B, device=self.device)
 
-            for j, (q_b, target_q_b) in enumerate(zip(q_branches, target_q_branches)):
+            for j, (q_b, online_next_q_b, target_q_b) in enumerate(
+                    zip(q_branches, online_next_q_branches, target_q_branches)
+            ):
                 k = self.n_upstream[i]
                 actions_j = torch.LongTensor([
                     self._branch_action_value(t[i], j, k)
                     for t in batch["actions"]
                 ]).to(self.device)
 
-                q_chosen_sum += q_b.gather(1, actions_j.unsqueeze(1)).squeeze(1)
-                q_next_max_sum += target_q_b.max(dim=1)[0]
-                q_chosen_agent = q_chosen_sum / max(1, len(q_branches))
-                q_next_agent = q_next_max_sum / max(1, len(target_q_branches))
+                # Q_i(o_i, a_i): evaluate the actually executed action.
+                q_chosen_sum += q_b.gather(
+                    1,
+                    actions_j.unsqueeze(1),
+                ).squeeze(1)
 
-            # q_chosen_list.append(q_chosen_sum)
-            # q_next_max_list.append(q_next_max_sum)
+                # Double-Q target:
+                # 1) choose next action using online network
+                # 2) evaluate chosen next action using target network
+                next_actions_j = online_next_q_b.argmax(dim=1)
+                q_next_sum += target_q_b.gather(
+                    1,
+                    next_actions_j.unsqueeze(1),
+                ).squeeze(1)
+
+            n_branches = max(1, len(q_branches))
+            q_chosen_agent = q_chosen_sum / n_branches
+            q_next_agent = q_next_sum / n_branches
+
             q_chosen_list.append(q_chosen_agent)
-            q_next_max_list.append(q_next_agent)
+            q_next_list.append(q_next_agent)
 
         q_chosen_t = torch.stack(q_chosen_list, dim=1)   # (B, n_agents)
-        q_next_max_t = torch.stack(q_next_max_list, dim=1)
+        q_next_t = torch.stack(q_next_list, dim=1)
 
         states_t = encoded_obs.reshape(B, -1)
         next_states_t = encoded_next.reshape(B, -1)
 
         q_tot = self.mixer(q_chosen_t, states_t)
         with torch.no_grad():
-            q_tot_next = self.target_mixer(q_next_max_t, next_states_t)
+            q_tot_next = self.target_mixer(q_next_t, next_states_t)
 
         rewards_t = torch.FloatTensor(batch["rewards"].mean(axis=1)).to(self.device)
         dones_t = torch.FloatTensor(batch["dones"][:, 0]).to(self.device)

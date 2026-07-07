@@ -3,7 +3,7 @@
 #   python scripts/full_compare.py
 
 topo: 3layers
-ep: 1000
+ep: 300
 hard: false
 config:
 
@@ -11,7 +11,7 @@ device: cuda
 eval_seeds: 1
 rl_eval_interval: 20
 rl_eval_seeds: 1
-output_prefix: conv_pure_3layers_ep1000_int20_seed1
+output_prefix: conv_pure_3layers_ep300_int20_seed1
 
 skip_rl: false
 skip_sea: true
