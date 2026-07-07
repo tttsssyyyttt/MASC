@@ -82,6 +82,7 @@ def compute_metrics(info_history: List[dict], cfg=None) -> dict:
     service_demands = requested_demands.copy()
     if cfg is not None and hasattr(cfg, "layers"):
         layers = np.asarray(cfg.layers)
+
         terminal_mask = layers == layers.max()
         service_demands[:, terminal_mask] = external_demands[:, terminal_mask]
 
@@ -253,25 +254,74 @@ def compute_metrics(info_history: List[dict], cfg=None) -> dict:
     }
 
     # Per-layer aggregation if cfg is provided
-    if cfg is not None:
-        layers = np.array(cfg.layers)
-        unique_layers = sorted(set(layers))
+    # if cfg is not None:
+    #     layers = np.array(cfg.layers)
+    #     unique_layers = sorted(set(layers))
+    #     per_layer = {}
+    #     for l in unique_layers:
+    #         mask = layers == l
+    #         per_layer[f"layer_{l}_cost_per_step"] = float(per_node_cost_per_step[mask].mean())
+    #         per_layer[f"layer_{l}_fill_rate"] = float(per_agent_fill_rate[mask].mean())
+    #         per_layer[f"layer_{l}_stockout_rate"] = float(per_agent_stockout_rate[mask].mean())
+    #         layer_bw = bullwhip_cv[mask]
+    #         layer_bw_finite = layer_bw[np.isfinite(layer_bw)]
+    #         per_layer[f"layer_{l}_bullwhip_cv"] = float(layer_bw_finite.mean()) if len(layer_bw_finite) > 0 else 1.0
+    #         per_layer[f"layer_{l}_turnover"] = float(inventory_turnover[mask].mean())
+    #         per_layer[f"layer_{l}_holding"] = float(per_node_holding[mask].mean())
+    #         per_layer[f"layer_{l}_backlog"] = float(per_node_backlog[mask].mean())
+    #         per_layer[f"layer_{l}_transport"] = float(per_node_transport[mask].mean())
+    #     metrics["per_layer"] = per_layer
+    #     metrics["n_layers"] = len(unique_layers)
+    # Per-layer aggregation if cfg is provided.
+    # Use flat scalar keys so they appear in CSV summaries.
+    if cfg is not None and hasattr(cfg, "layers"):
+        layers = np.asarray(cfg.layers)
+        unique_layers = sorted(np.unique(layers))
         per_layer = {}
+
         for l in unique_layers:
             mask = layers == l
-            per_layer[f"layer_{l}_cost_per_step"] = float(per_node_cost_per_step[mask].mean())
-            per_layer[f"layer_{l}_fill_rate"] = float(per_agent_fill_rate[mask].mean())
-            per_layer[f"layer_{l}_stockout_rate"] = float(per_agent_stockout_rate[mask].mean())
+
+            layer_service_demand = float(service_demands[:, mask].sum())
+            layer_fulfilled = float(fulfilled_for_service[:, mask].sum())
+
+            layer_holding = float(per_node_holding[mask].sum())
+            layer_backlog = float(per_node_backlog[mask].sum())
+            layer_transport = float(per_node_transport[mask].sum())
+            layer_cost = layer_holding + layer_backlog + layer_transport
+
+            layer_fill_rate = float(layer_fulfilled / max(layer_service_demand, 1e-9))
+            layer_stockout_rate = 1.0 - layer_fill_rate
+
             layer_bw = bullwhip_cv[mask]
             layer_bw_finite = layer_bw[np.isfinite(layer_bw)]
-            per_layer[f"layer_{l}_bullwhip_cv"] = float(layer_bw_finite.mean()) if len(layer_bw_finite) > 0 else 1.0
-            per_layer[f"layer_{l}_turnover"] = float(inventory_turnover[mask].mean())
-            per_layer[f"layer_{l}_holding"] = float(per_node_holding[mask].mean())
-            per_layer[f"layer_{l}_backlog"] = float(per_node_backlog[mask].mean())
-            per_layer[f"layer_{l}_transport"] = float(per_node_transport[mask].mean())
+            layer_bullwhip = float(layer_bw_finite.mean()) if len(layer_bw_finite) > 0 else 1.0
+
+            # Flat scalar keys: these will be written to CSV.
+            metrics[f"layer_{l}_fill_rate"] = layer_fill_rate
+            metrics[f"layer_{l}_stockout_rate"] = layer_stockout_rate
+            metrics[f"layer_{l}_holding"] = layer_holding
+            metrics[f"layer_{l}_backlog"] = layer_backlog
+            metrics[f"layer_{l}_transport"] = layer_transport
+            metrics[f"layer_{l}_cost"] = layer_cost
+            metrics[f"layer_{l}_holding_per_step"] = layer_holding / n_steps
+            metrics[f"layer_{l}_backlog_per_step"] = layer_backlog / n_steps
+            metrics[f"layer_{l}_cost_per_step"] = layer_cost / n_steps
+            metrics[f"layer_{l}_order_mean"] = float(per_node_order_mean[mask].mean())
+            metrics[f"layer_{l}_order_std"] = float(per_node_order_std[mask].mean())
+            metrics[f"layer_{l}_bullwhip_cv"] = layer_bullwhip
+            metrics[f"layer_{l}_turnover"] = float(inventory_turnover[mask].mean())
+
+            # Keep nested dict for JSON/debug readability.
+            per_layer[f"layer_{l}_fill_rate"] = layer_fill_rate
+            per_layer[f"layer_{l}_stockout_rate"] = layer_stockout_rate
+            per_layer[f"layer_{l}_holding"] = layer_holding
+            per_layer[f"layer_{l}_backlog"] = layer_backlog
+            per_layer[f"layer_{l}_cost"] = layer_cost
+            per_layer[f"layer_{l}_cost_per_step"] = layer_cost / n_steps
+
         metrics["per_layer"] = per_layer
         metrics["n_layers"] = len(unique_layers)
-
     return metrics
 
 

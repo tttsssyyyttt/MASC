@@ -444,8 +444,27 @@ def train_rl(
                 "q_next_mean",
                 "target_raw_mean",
                 "target_raw_std",
+                "td_loss",
+                "q_reg",
         ):
             train_row[key] = _safe_float(mean_updates.get(key, ""))
+
+        for key in (
+                "layer_0_fill_rate",
+                "layer_0_holding",
+                "layer_0_backlog",
+                "layer_0_cost_per_step",
+                "layer_1_fill_rate",
+                "layer_1_holding",
+                "layer_1_backlog",
+                "layer_1_cost_per_step",
+                "layer_2_fill_rate",
+                "layer_2_holding",
+                "layer_2_backlog",
+                "layer_2_cost_per_step",
+        ):
+            train_row[key] = _safe_float(ep_metrics.get(key, ""))
+
         for key in (
                 "avg_cost_per_step",
                 "weighted_total_cost",
