@@ -21,8 +21,10 @@ layers: [0, 0, 1, 1, 1, 2, 2, 2, 2]
 # Key fix: B/H ratio must be >> 1 for terminals to incentivize avoiding stockouts
 # Original: H=[1,1,2,2,2,3,3,3,3], B=[5,5,4,4,4,3,3,3,3] → B/H=1.0 for terminals!
 # Fixed: B/H >= 5 for all nodes, especially terminals
-H: [1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
-B: [5.0, 5.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]
+#H: [1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
+#B: [5.0, 5.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]
+H: [1.0, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0, 2.0, 2.0]
+B: [3.0, 3.0, 5.0, 5.0, 5.0, 10.0, 10.0, 10.0, 10.0]
 
 # Increase max_order to allow catching up from backlog
 max_order: 30
@@ -38,10 +40,10 @@ reward_scale: 0.002
 
 # Reward shaping: very aggressive stockout avoidance
 stockout_penalty: 0.0
-fill_rate_bonus: 10.0
+fill_rate_bonus: 0.0
 order_penalty: 0.0
 service_level_target: 1
-service_level_penalty: 300.0
+service_level_penalty: 0.0
 # Increase initial inventory for better warm-up
 init_inventory: 40.0
 init_pipeline: 16.0
