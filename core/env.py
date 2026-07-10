@@ -47,12 +47,19 @@ class MEIRPEnv(gym.Env):
 
         self.inventory = np.zeros(self.n, dtype=np.float64)
         self.backlog = np.zeros(self.n, dtype=np.float64)
-        self.demand = np.zeros(self.n, dtype=np.float64)
+
+        self.demand = np.zeros(self.n, dtype=np.float64)  # 唯一服务需求口径
+        self.need = np.zeros(self.n, dtype=np.float64)  # demand + old_backlog
+        self.fulfilled_demand = np.zeros(self.n, dtype=np.float64)  # 实际满足 need 的量
+        self.current_fulfilled = np.zeros(self.n, dtype=np.float64)  # 本期 demand 被满足的量
+
         self.external_demand = np.zeros(self.n, dtype=np.float64)
         self.downstream_order_demand = np.zeros(self.n, dtype=np.float64)
-        self.shipped_demand = np.zeros(self.n, dtype=np.float64)
-        self.inventory_demand = np.zeros(self.n, dtype=np.float64)
-        self.fulfilled_demand = np.zeros(self.n, dtype=np.float64)
+
+        # legacy / diagnostic only
+        self.shipped_demand = np.zeros(self.n, dtype=np.float64)  # 实际发货流量，仅日志
+        self.inventory_demand = self.demand  # 不再独立使用
+
         self.pipeline = np.zeros((self.n, self.L), dtype=np.float64)
 
         self.demand_hist = np.zeros((self.n, self.L), dtype=np.float64)
@@ -95,11 +102,18 @@ class MEIRPEnv(gym.Env):
 
         self.inventory[:] = self.cfg.init_inventory
         self.backlog[:] = 0.0
+
         self.demand[:] = 0.0
+        self.need[:] = 0.0
+        self.fulfilled_demand[:] = 0.0
+        self.current_fulfilled[:] = 0.0
+
         self.external_demand[:] = 0.0
         self.downstream_order_demand[:] = 0.0
+
         self.shipped_demand[:] = 0.0
-        self.inventory_demand[:] = 0.0
+        self.inventory_demand = self.demand
+
         self.fulfilled_demand[:] = 0.0
         self.pipeline[:] = self.cfg.init_pipeline
         self.demand_hist[:] = 0.0
@@ -153,37 +167,69 @@ class MEIRPEnv(gym.Env):
 
         return order_qty, alpha_per_node
 
-    def _allocate_shipments(
-        self,
-        order_qty: np.ndarray,
-        alpha_per_node: Dict[int, List[float]],
+    def _build_shipments_from_fulfilled(
+            self,
+            order_qty: np.ndarray,
+            alpha_per_node: Dict[int, List[float]],
     ) -> Tuple[np.ndarray, Dict[int, Dict[int, float]]]:
-        """Allocate orders to upstreams and return inbound shipment details."""
+        """Build physical shipments from fulfilled service demand.
+
+        shipment_to[j] is inbound quantity that will arrive to node j after lead time.
+        ship_detail[u][d] is physical shipment from upstream u to downstream d.
+        """
         shipment_to = np.zeros(self.n, dtype=np.float64)
         ship_detail: Dict[int, Dict[int, float]] = {i: {} for i in range(self.n)}
 
+        # 1. root 节点的 action 表示向外部供应源订货，进入 root pipeline
         for i in range(self.n):
-            q_i = int(round(order_qty[i]))
-            ups = self.upstream[i]
-            k = len(ups)
+            if len(self.upstream[i]) == 0:
+                shipment_to[i] += float(int(round(order_qty[i])))
 
-            if k == 0:
-                shipment_to[i] = float(q_i)
+        # 2. 收集每个 upstream 被哪些 downstream 请求
+        requests_by_upstream: Dict[int, List[Tuple[int, float]]] = {
+            i: [] for i in range(self.n)
+        }
+
+        for d in range(self.n):
+            ups = self.upstream[d]
+            if not ups:
                 continue
 
-            alpha_i = alpha_per_node[i]
-            if not alpha_i or sum(alpha_i) < 1e-9:
-                alpha_i = [1.0 / k] * k
+            alpha = alpha_per_node.get(d, [])
+            if not alpha or sum(alpha) < 1e-9:
+                alpha = [1.0 / len(ups)] * len(ups)
 
-            alpha_sum = sum(alpha_i)
-            alpha_i = [a / alpha_sum for a in alpha_i]
-            upstream_avail = [max(self.inventory[u], 0.0) for u in ups]
-            shipments = allocate(q_i, alpha_i, upstream_avail)
+            alpha_sum = sum(alpha)
+            total_q = float(order_qty[d])
 
             for j, u in enumerate(ups):
-                amt = shipments[j]
-                ship_detail[u][i] = amt
-                shipment_to[i] += amt
+                req = total_q * alpha[j] / alpha_sum
+                if req > 1e-9:
+                    requests_by_upstream[u].append((d, req))
+
+        # 3. 对每个 upstream，把它本期真正 fulfilled 的量分配给请求它的 downstream
+        for u, reqs in requests_by_upstream.items():
+            if not reqs:
+                continue
+
+            total_requested = sum(req for _, req in reqs)
+            if total_requested <= 1e-9:
+                continue
+
+            outbound_cap = min(float(self.current_fulfilled[u]), total_requested)
+
+            for d, req in reqs:
+                amt = outbound_cap * req / total_requested
+                ship_detail[u][d] = amt
+                shipment_to[d] += amt
+
+        self.shipped_demand = np.zeros(self.n, dtype=np.float64)
+        for u, children in ship_detail.items():
+            self.shipped_demand[u] = sum(children.values())
+
+        # terminal 的 shipped_demand 可以用 current_fulfilled 表示对外部客户的实际服务
+        for t in self.terminals:
+            self.shipped_demand[t] = self.current_fulfilled[t]
 
         return shipment_to, ship_detail
 
@@ -208,7 +254,7 @@ class MEIRPEnv(gym.Env):
         alpha_per_node: Dict[int, List[float]],
         external_demand: np.ndarray,
     ) -> np.ndarray:
-        """Demand requested by downstream nodes before upstream availability limits."""
+        """Service demand for each node: terminal external demand + downstream replenishment requests."""
         demand_arr = external_demand.copy()
 
         for d in range(self.n):
@@ -243,16 +289,23 @@ class MEIRPEnv(gym.Env):
         return demand_arr
 
     def _update_inventory_and_backlog(self):
-        """Apply arrivals, fulfill current demand, and carry unmet demand."""
-        fulfilled_arr = np.zeros(self.n, dtype=np.float64)
-        for i in self.topo_order:
-            self.inventory[i] += self.pipeline[i, 0]
-            total_need = self.demand[i] + self.backlog[i]
-            fulfilled = min(self.inventory[i], total_need)
-            self.inventory[i] -= fulfilled
-            self.backlog[i] = total_need - fulfilled
-            fulfilled_arr[i] = fulfilled
-        self.fulfilled_demand = fulfilled_arr
+        """Receive arrivals, fulfill demand, and update aggregate backlog."""
+        # 1. pipeline 到货先入库
+        self.inventory += self.pipeline[:, 0]
+
+        # 2. 保存 fulfill 前的总需求，避免 fill_rate 用更新后的 backlog 反推
+        old_backlog = self.backlog.copy()
+        self.need = self.demand + old_backlog
+
+        # 3. 用库存满足 need
+        self.fulfilled_demand = np.minimum(self.inventory, self.need)
+
+        # 4. 库存扣减，backlog 更新
+        self.inventory -= self.fulfilled_demand
+        self.backlog = self.need - self.fulfilled_demand
+
+        # 5. 本期 demand 被满足的部分，用于 service fill / reward / 当前发货分配
+        self.current_fulfilled = np.minimum(self.fulfilled_demand, self.demand)
 
     def _advance_pipeline(self, shipment_to: np.ndarray):
         """Shift in-transit stock and enqueue this step's shipments."""
@@ -263,9 +316,7 @@ class MEIRPEnv(gym.Env):
     def _record_history(self, order_qty: np.ndarray):
         """Record demand and order histories used in observations."""
         self.demand_hist[:, :-1] = self.demand_hist[:, 1:]
-        # Original obs history used inventory demand only:
-        # self.demand_hist[:, -1] = self.demand
-        self.demand_hist[:, -1] = self.downstream_order_demand
+        self.demand_hist[:, -1] = self.demand
 
         self.order_hist[:, :-1] = self.order_hist[:, 1:]
         self.order_hist[:, -1] = order_qty
@@ -273,16 +324,11 @@ class MEIRPEnv(gym.Env):
     def _compute_rewards(self, order_qty: np.ndarray) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """Compute scaled rewards and cost components."""
         cfg = self.cfg
-        service_demand = self.downstream_order_demand.copy()
-        for t in self.terminals:
-            service_demand[t] = self.external_demand[t]
-
-        service_fulfilled = np.minimum(self.fulfilled_demand, service_demand)
 
         rewards, holding_costs, backlog_costs = compute_reward(
             self.inventory,
             self.backlog,
-            service_demand,
+            self.demand,
             self.H_arr,
             self.B_arr,
             cfg.alpha,
@@ -292,7 +338,7 @@ class MEIRPEnv(gym.Env):
             service_level_target=cfg.service_level_target,
             service_level_penalty=cfg.service_level_penalty,
             order_qty=order_qty,
-            fulfilled_demand=service_fulfilled,
+            fulfilled_demand=self.current_fulfilled,
         )
         return rewards * cfg.reward_scale, holding_costs, backlog_costs
 
@@ -334,15 +380,11 @@ class MEIRPEnv(gym.Env):
         return solution, transport_costs
 
     def _compute_fill_rates(self) -> np.ndarray:
-        """Compute per-node fill rates from current demand and backlog."""
-        fill_rates = np.zeros(self.n, dtype=np.float64)
-        for i in range(self.n):
-            total_need = self.demand[i] + self.backlog[i]
-            if total_need > 1e-9:
-                fill_rates[i] = max(0, (total_need - self.backlog[i]) / total_need)
-            else:
-                fill_rates[i] = 1.0
-        return fill_rates
+        """Current-period service fill rate per node."""
+        fill_rates = np.ones(self.n, dtype=np.float64)
+        mask = self.demand > 1e-9
+        fill_rates[mask] = self.current_fulfilled[mask] / self.demand[mask]
+        return np.clip(fill_rates, 0.0, 1.0)
 
     def _build_info(
         self,
@@ -359,14 +401,22 @@ class MEIRPEnv(gym.Env):
             "holding_costs": holding_costs,
             "backlog_costs": backlog_costs,
             "fill_rates": fill_rates,
+
             "order_qty": order_qty.copy(),
             "inventory": self.inventory.copy(),
+            "backlog": self.backlog.copy(),
+
+            # canonical fields
             "demand": self.demand.copy(),
-            "inventory_demand": self.inventory_demand.copy(),
+            "need": self.need.copy(),
+            "fulfilled_demand": self.current_fulfilled.copy(),
+
+            # diagnostic / backward-compatible fields
             "downstream_order_demand": self.downstream_order_demand.copy(),
-            "shipped_demand": self.shipped_demand.copy(),
             "external_demand": self.external_demand.copy(),
-            "fulfilled_demand": self.fulfilled_demand.copy(),
+            "inventory_demand": self.demand.copy(),
+            "shipped_demand": self.shipped_demand.copy(),
+
             "inbound_shipment": shipment_to.copy(),
             "transport_costs": transport_costs.copy(),
             "total_transport_cost": float(transport_costs.sum()),
@@ -387,28 +437,45 @@ class MEIRPEnv(gym.Env):
 
     def step(self, actions):
         """Execute one step."""
+        # 1. 解析 action：节点向上游下多少单
         order_qty, alpha_per_node = self._parse_actions(actions)
-        shipment_to, ship_detail = self._allocate_shipments(order_qty, alpha_per_node)
-        routing_solution, transport_costs = self._solve_routing(ship_detail)
 
+        # 2. 生成本期 terminal 外部需求
         terminal_demands = self._next_terminal_demands()
         self.external_demand = self._external_demand_array(terminal_demands)
+
+        # 3. 构造统一 demand：terminal external + downstream replenishment requests
         self.downstream_order_demand = self._build_downstream_order_demand(
             order_qty, alpha_per_node, self.external_demand,
         )
-        self.shipped_demand = self._build_shipped_demand(ship_detail, self.external_demand)
-        self.inventory_demand = self.shipped_demand.copy()
-        self.demand = self.inventory_demand.copy()
+        self.demand = self.downstream_order_demand.copy()
+        self.inventory_demand = self.demand  # legacy alias only
+
+        # 4. pipeline 到货、满足 demand、更新 backlog
         self._update_inventory_and_backlog()
+
+        # 5. 根据 fulfilled 生成真实 shipment 和 routing input
+        shipment_to, ship_detail = self._build_shipments_from_fulfilled(
+            order_qty, alpha_per_node
+        )
+
+        # 6. routing 基于真实 shipment
+        routing_solution, transport_costs = self._solve_routing(ship_detail)
+
+        # 7. 推进 pipeline，把真实 shipment 放入在途库存
         self._advance_pipeline(shipment_to)
+
+        # 8. 记录历史
         self._record_history(order_qty)
 
+        # 9. reward / metrics
         rewards, holding_costs, backlog_costs = self._compute_rewards(order_qty)
         rewards = self._apply_transport_reward(rewards, transport_costs)
         fill_rates = self._compute_fill_rates()
 
         self.step_num += 1
         terminated = self.step_num >= self.cfg.episode_len
+
         info = self._build_info(
             holding_costs, backlog_costs, fill_rates, order_qty,
             shipment_to, transport_costs, routing_solution,

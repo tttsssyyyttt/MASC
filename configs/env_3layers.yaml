@@ -41,18 +41,6 @@ demand_std: 3.0
 alpha: 0.3
 reward_scale: 0.002
 
-#  ALNS-IRP              577.0     0.9471     2.5636     0.0529
-#  MAPPO                 447.0 *     0.9674     3.0614     0.0326
-#stockout_penalty: 30.0
-#fill_rate_bonus: 10.0
-#order_penalty: 0.0
-#service_level_target: 1
-#service_level_penalty: 0.0
-
-#stockout_penalty: 10.0
-#fill_rate_bonus: 3.0
-#  ALNS-IRP              577.0     0.9471     2.5636     0.0529
-#  MAPPO                 349.6 *     0.7689     2.6242     0.2311
 # Reward shaping: very aggressive stockout avoidance
 stockout_penalty: 10.0
 fill_rate_bonus: 3.0
@@ -66,3 +54,24 @@ init_pipeline: 16.0
 transport_coeff: 0.0
 
 seed: 42
+
+#  ALNS-IRP              577.0     0.9471     2.5636     0.0529
+#  MAPPO                 447.0 *     0.9674     3.0614     0.0326
+#stockout_penalty: 30.0
+#fill_rate_bonus: 10.0
+#order_penalty: 0.0
+#service_level_target: 1
+#service_level_penalty: 0.0
+
+#stockout_penalty: 10.0
+#fill_rate_bonus: 3.0
+#  ALNS-IRP              577.0     0.9471     2.5636     0.0529
+#  MAPPO                 349.6 *     0.7689     2.6242     0.2311
+
+#  ALNS-IRP              680.3     0.9537     2.5830     0.0463
+#  MAPPO                 435.0 *     0.9694     1.5466     0.0306
+#stockout_penalty: 10.0
+#fill_rate_bonus: 3.0
+#order_penalty: 0.0
+#service_level_target: 1
+#service_level_penalty: 50.0

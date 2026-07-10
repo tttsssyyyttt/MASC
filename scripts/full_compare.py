@@ -601,7 +601,7 @@ def write_summary_csv(path, order, results, runtimes):
         for name in order:
             metrics = results[name]
             row = {"algorithm": name, "runtime_sec": runtimes.get(name, 0.0)}
-            for key in fields[1:-1]:
+            for key in fields[1: ]:
                 row[key] = _summary_value(metrics, key)
             writer.writerow(row)
 

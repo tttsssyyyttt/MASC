@@ -79,13 +79,7 @@ def compute_metrics(info_history: List[dict], cfg=None) -> dict:
     # MEIRP demand-weighted installation fill rate:
     # - terminal layer serves external customer demand
     # - upstream/intermediate layers serve downstream replenishment demand
-    service_demands = requested_demands.copy()
-    if cfg is not None and hasattr(cfg, "layers"):
-        layers = np.asarray(cfg.layers)
-
-        terminal_mask = layers == layers.max()
-        service_demands[:, terminal_mask] = external_demands[:, terminal_mask]
-
+    service_demands = demands.copy()
     fulfilled_for_service = np.minimum(fulfilled_demands, service_demands)
 
     total_service_demand = service_demands.sum()
