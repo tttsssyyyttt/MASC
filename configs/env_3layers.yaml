@@ -24,7 +24,10 @@ layers: [0, 0, 1, 1, 1, 2, 2, 2, 2]
 #H: [1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
 #B: [5.0, 5.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]
 H: [1.0, 1.0, 1.5, 1.5, 1.5, 2.0, 2.0, 2.0, 2.0]
-B: [3.0, 3.0, 5.0, 5.0, 5.0, 10.0, 10.0, 10.0, 10.0]
+B: [3.0, 3.0, 4.5, 4.5, 4.5, 6.0, 6.0, 6.0, 6.0]
+
+#  ALNS-IRP              577.0     0.9471     2.5636     0.0529
+#  MAPPO                 721.1     0.3102     0.9753     0.6898
 
 # Increase max_order to allow catching up from backlog
 max_order: 30
@@ -38,12 +41,24 @@ demand_std: 3.0
 alpha: 0.3
 reward_scale: 0.002
 
+#  ALNS-IRP              577.0     0.9471     2.5636     0.0529
+#  MAPPO                 447.0 *     0.9674     3.0614     0.0326
+#stockout_penalty: 30.0
+#fill_rate_bonus: 10.0
+#order_penalty: 0.0
+#service_level_target: 1
+#service_level_penalty: 0.0
+
+#stockout_penalty: 10.0
+#fill_rate_bonus: 3.0
+#  ALNS-IRP              577.0     0.9471     2.5636     0.0529
+#  MAPPO                 349.6 *     0.7689     2.6242     0.2311
 # Reward shaping: very aggressive stockout avoidance
-stockout_penalty: 0.0
-fill_rate_bonus: 0.0
+stockout_penalty: 10.0
+fill_rate_bonus: 3.0
 order_penalty: 0.0
 service_level_target: 1
-service_level_penalty: 0.0
+service_level_penalty: 50.0
 # Increase initial inventory for better warm-up
 init_inventory: 40.0
 init_pipeline: 16.0
